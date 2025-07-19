@@ -1,17 +1,34 @@
+'use client'
+import { useState } from 'react';
 
-import Link from 'next/link';
+const tabs = [
+  'HOME','CHRONICLES','FACTFILE','CHARITRA','PANCHANGAM',
+  'INVITATION','SEVA','TEMPLES','CHANNELS','ABOUT','CONNECT'
+];
 
 export default function Navbar() {
+  const [active, setActive] = useState('HOME');
+
   return (
-    <nav className="bg-blue-800 text-white p-4">
-      <ul className="flex space-x-4 justify-center">
-        <li><Link href="/">Home</Link></li>
-        <li><Link href="/about">About</Link></li>
-        <li><Link href="/temple">Temple</Link></li>
-        <li><Link href="/events">Events</Link></li>
-        <li><Link href="/gallery">Gallery</Link></li>
-        <li><Link href="/contact">Contact</Link></li>
-      </ul>
+    <nav className="bg-orange-50 w-full border-b">
+      <div className="px-2">
+        <ul className="flex flex-wrap justify-center gap-1 py-2">
+          {tabs.map(tab => (
+            <li key={tab}>
+              <button
+                onClick={() => setActive(tab)}
+                className={`px-2 py-1 text-xs rounded transition-colors cursor-pointer ${
+                  active === tab
+                    ? 'bg-red-500 text-white'
+                    : 'bg-white text-gray-700 hover:bg-orange-100'
+                }`}
+              >
+                {tab}
+              </button>
+            </li>
+          ))}
+        </ul>
+      </div>
     </nav>
   );
 }
