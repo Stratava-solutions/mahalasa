@@ -1,181 +1,104 @@
-
-import HeroSection from '@/components/HeroSection';
-import Image from 'next/image';
+import HeroSection from "@/components/HeroSection";
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div>
+    <div className="bg-[#eee9c0] min-h-screen">
       <HeroSection />
       
-      <section className="container mx-auto px-4 py-8">
-        <div className="text-center mb-8 md:mb-12">
-          <p className="text-base md:text-lg text-gray-700 max-w-3xl mx-auto leading-relaxed px-4">
-            Welcome to the divine abode of Goddess Mahalasa Narayani, the enchanting Mohini avatar of Lord Vishnu. 
-            Experience the sacred traditions, rich history, and spiritual bliss that has blessed devotees for centuries.
-          </p>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-6 max-w-4xl">
+        
+        {/* Title */}
+        <div className="text-center mb-6">
+          <h2 className="text-2xl font-bold text-green-700 mb-4">The Divine Mother's Glory</h2>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-8 mb-8 md:mb-12">
-          <div className="bg-red-50 p-6 rounded-lg text-center">
-            <div className="text-4xl mb-4">🕉️</div>
-            <h3 className="text-xl font-semibold mb-3 text-red-600">Sacred Darshan</h3>
-            <p className="text-gray-700">
-              Experience the divine presence through daily aarti, special pujas, and festival celebrations.
+        {/* Main Goddess Image */}
+        <div className="text-center mb-6">
+          <div className="inline-block">
+            <Image
+              src="/god.jpg"
+              alt="Shri Mahalasa Narayani"
+              width={410}
+              height={551}
+              className="mx-auto border-4 border-yellow-600 rounded-lg shadow-lg"
+              priority
+            />
+            <p className="text-sm text-gray-600 mt-2 italic">Shri Mahalasa Narayani</p>
+          </div>
+        </div>
+
+        {/* Main Content Text */}
+        <div className="bg-[#eee9c0] p-6 rounded-lg shadow-sm mb-6">
+          <div className="prose max-w-none text-gray-800 leading-relaxed">
+            <p className="mb-4">
+              <strong className="text-green-700">SHRI MAHALASA NARAYANI</strong> is the powerful <strong>Kuladevata</strong> (family deity) of many Hindus, especially in western and southern India.
+            </p>
+            
+            <p className="mb-4">
+              <strong className="text-green-700">"Mahalasa"</strong> is another name for the Supreme Lord Vishnu's famous <strong>avatar</strong> (incarnation): <strong className="text-green-700">Mohini, the Enchantress</strong>.
+            </p>
+            
+            <p className="mb-4">
+              Temples dedicated to the worship of Shri Mahalasa Narayani are present in Maharashtra, Goa, Karnataka, Kerala and many other places.
+            </p>
+            
+            <p className="mb-4">
+              The most popular temple of Supreme Mother Mahalasa is at Mardol in Goa, which is over 450 years old. Other temples, like the one in Kumta and Basrur, both in Karnataka, are also said to be over 400 years old.
+            </p>
+            
+            <p className="mb-4">
+              Yet, Shri Mahalasa Narayani has other ancient and historic temples dedicated to Her, including at Nevase in Ahmednagar district of Maharashtra, where she is known as Shri Mohiniraj of the Amrut Manthan (the epic churning of the ocean) fame. It is believed that it is from Nevase that Shri Mahalasa Narayani came to Verna in Gomantak, that is present-day Goa. Before Nevase, there is a Mohini temple in Nepal, near the world-famous Pashupatinath temple.
+            </p>
+            
+            <p className="mb-4">
+              However, one temple to <strong className="text-green-700">Amma Mahalasa</strong> that deserves special mention here is the scenic spiritual center at the idyllic <strong className="text-blue-600">Harikhandige</strong> village in Udupi district of coastal Karnataka. Nestled amidst hills & forests, Shri Mahalasa Narayani Devi Kshetra campus is an ideal example of deep faith, devotion, dedication and sacrifice exhibited by Her devotees. Constructed just over decade ago, the Harikhandige temple, by far, is growing more and more popular with every passing day as stories of Her miracles here abound! And, all because of one divine person, Her Blessed Son, whom many consider as a living God: <strong className="text-orange-600">His Holiness Guruji Shri Suresh J Pai</strong>.
+            </p>
+            
+            <p className="mb-6">
+              This portal, consisting of information from many of Her temples, is a humble service to the almighty Beloved Kuladevata, and a contribution to millions of Her devotees by providing them information about Shri Mahalasa Narayani and Her infinite greatness; about many of the temples dedicated to Her, various alankaars (appearances), stotras and stuthis, audios, videos, and so on. And, <em>not to forget, the nectar of information—inspired by Herself—in the form Her Charitra, the Holy Book that has given immense inspiration and relief from worldly difficulties, to Her devotees. To get more information on how to receive Her grace, click on the <strong className="text-blue-600">Charitra</strong> page</em>.
             </p>
           </div>
           
-          <div className="bg-orange-50 p-6 rounded-lg text-center">
-            <div className="text-4xl mb-4">📿</div>
-            <h3 className="text-xl font-semibold mb-3 text-orange-600">Spiritual Journey</h3>
-            <p className="text-gray-700">
-              Discover the rich chronicles, ancient traditions, and spiritual teachings of Goddess Mahalasa.
-            </p>
-          </div>
-          
-          <div className="bg-yellow-50 p-6 rounded-lg text-center">
-            <div className="text-4xl mb-4">🤝</div>
-            <h3 className="text-xl font-semibold mb-3 text-yellow-600">Community</h3>
-            <p className="text-gray-700">
-              Join our global community of devotees through seva, festivals, and spiritual programs.
-            </p>
-          </div>
-        </div>
-
-        <div className="bg-gradient-to-r from-red-100 to-orange-100 rounded-lg p-4 md:p-8 mb-8 md:mb-12">
-          <div className="text-center">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-red-700">Daily Darshan Times</h3>
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold text-orange-600">Mangala Aarti</h4>
-                <p className="text-gray-700">5:00 AM</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold text-orange-600">Madhyana Aarti</h4>
-                <p className="text-gray-700">12:00 PM</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold text-orange-600">Sandhya Aarti</h4>
-                <p className="text-gray-700">7:00 PM</p>
-              </div>
-              <div className="bg-white p-4 rounded-lg">
-                <h4 className="font-semibold text-orange-600">Shayan Aarti</h4>
-                <p className="text-gray-700">9:00 PM</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-8 lg:mb-12">
-          <div className="bg-blue-50 p-4 md:p-6 rounded-lg">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-blue-600">Upcoming Celebrations</h3>
-            <div className="space-y-4">
-              <div className="flex justify-between items-center p-3 bg-white rounded">
-                <div>
-                  <h4 className="font-semibold">Mahalasa Jayanti</h4>
-                  <p className="text-sm text-gray-600">Grand celebration</p>
-                </div>
-                <span className="text-blue-600 font-bold">Aug 15</span>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded">
-                <div>
-                  <h4 className="font-semibold">Ganesha Chaturthi</h4>
-                  <p className="text-sm text-gray-600">Festival celebration</p>
-                </div>
-                <span className="text-blue-600 font-bold">Aug 20</span>
-              </div>
-              <div className="flex justify-between items-center p-3 bg-white rounded">
-                <div>
-                  <h4 className="font-semibold">Navratri</h4>
-                  <p className="text-sm text-gray-600">9-day celebration</p>
-                </div>
-                <span className="text-blue-600 font-bold">Sep 15</span>
-              </div>
-            </div>
-          </div>
-
-          <div className="bg-green-50 p-4 md:p-6 rounded-lg">
-            <h3 className="text-xl md:text-2xl font-semibold mb-4 text-green-600">Temple Services</h3>
-            <div className="space-y-3">
-              <div className="flex items-center">
-                <span className="text-green-500 mr-3">✓</span>
-                <span>Daily worship and aarti</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-500 mr-3">✓</span>
-                <span>Special occasion pujas</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-500 mr-3">✓</span>
-                <span>Wedding and ceremony blessings</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-500 mr-3">✓</span>
-                <span>Spiritual guidance and counseling</span>
-              </div>
-              <div className="flex items-center">
-                <span className="text-green-500 mr-3">✓</span>
-                <span>Community programs and education</span>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        {/* Deity Images Section */}
-        <div className="mb-8 md:mb-12">
-          <h2 className="text-2xl md:text-3xl font-bold text-center text-red-600 mb-6">Divine Darshan</h2>
-          <div className="flex flex-col lg:flex-row items-center justify-center gap-6 lg:gap-12">
-            {/* Main Deity Image - god.jpg (410x551 - portrait) */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative">
+          {/* Seva Box */}
+          <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+            <div className="flex items-start">
+              <div className="mr-4 mt-1">
                 <Image
                   src="/god.jpg"
-                  alt="Goddess Mahalasa Narayani"
-                  width={410}
-                  height={551}
-                  className="w-full h-auto max-w-sm mx-auto"
-                  priority
+                  alt="Goddess icon"
+                  width={60}
+                  height={80}
+                  className="rounded"
                 />
               </div>
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-semibold text-red-600 mb-2">श्री महालसा नारायणी</h3>
-                <p className="text-gray-700">Sacred darshan of Goddess Mahalasa Narayani</p>
+              <div>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  <em>This portal also provides an opportunity to devotees, who are otherwise constrained by distance and time, to perform a <strong className="text-green-700">Seva</strong> to Shri Mahalasa Narayani on a date and time of their choice and receive Her Prasad and, more importantly, <strong className="text-green-700">Her infinite love and blessings!</strong></em>
+                </p>
+                <p className="text-sm text-gray-700 mt-2">
+                  Please visit the <strong className="text-blue-600">Seva</strong> page for details.
+                </p>
               </div>
             </div>
+          </div>
+          
+          <div className="text-gray-700 leading-relaxed">
+            <p className="mb-4">
+              The most popular section of this portal is the <strong className="text-blue-600">Panchang</strong> section (at left), which gives you the tithis & festivals of the day and week ahead and events at Her various temples (from where we receive regular information). The <strong className="text-blue-600">Panchang</strong> page gives you the entire month's calendar of tithis and events.
+            </p>
             
-            {/* Secondary Temple Image - god2.jpg (300x218 - landscape) */}
-            <div className="bg-white rounded-lg shadow-lg overflow-hidden">
-              <div className="relative">
-                <Image
-                  src="/god2.jpg"
-                  alt="Temple Divine View"
-                  width={300}
-                  height={218}
-                  className="w-full h-auto max-w-xs mx-auto"
-                />
-              </div>
-              <div className="p-4 text-center">
-                <h3 className="text-xl font-semibold text-orange-600 mb-2">Sacred Temple</h3>
-                <p className="text-gray-700">Holy sanctum of divine blessings</p>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="text-center bg-gradient-to-r from-purple-100 to-pink-100 rounded-lg p-4 md:p-8">
-          <h3 className="text-xl md:text-2xl font-semibold mb-4 text-purple-700">Sacred Mantra</h3>
-          <div className="max-w-2xl mx-auto">
-            <p className="text-xl font-semibold text-purple-600 mb-2">
-              ॐ श्री महालसायै नमः
+            <p className="mb-4">
+              This site, first created in 1998, continues to grow as we receive more and more information about Shri Mahalasa Narayani and Her infinite glories. Apart from this portal, separate websites have been created as subdomains for several temples. Click on the <strong className="text-blue-600">Temple</strong> link in the navigation bar above to explore Her various temples from the drop-down menu.
             </p>
-            <p className="text-lg text-gray-700 mb-4">
-              Om Shree Mahalasayai Namah
-            </p>
-            <p className="text-sm text-gray-600">
-              Chant this sacred mantra to invoke the blessings of Goddess Mahalasa Narayani
+            
+            <p className="mb-6">
+              Please remember to visit this Temple on the Internet regularly to receive Mother Mahalasa's blessings and also share this useful information with your family and friends.
             </p>
           </div>
         </div>
-      </section>
+      </div>
     </div>
   );
 }

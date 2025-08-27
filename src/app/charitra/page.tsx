@@ -1,177 +1,217 @@
+import Image from "next/image";
+
 export default function Charitra() {
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8 text-red-600">Charitra</h1>
-      
-      <div className="max-w-4xl mx-auto">
-        <section className="mb-8 text-center">
-          <div className="bg-gradient-to-r from-orange-100 to-red-100 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-red-700">
-              श्री महालसा नारायणी देवी चरित्र
-            </h2>
-            <p className="text-lg text-gray-700 italic">
-              Divine Chronicles of Goddess Mahalasa Narayani
-            </p>
-          </div>
-        </section>
+    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100%)'}}>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-6 max-w-4xl">
+        
+        {/* Title */}
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold mb-4" style={{color: '#006633'}}>The Charitra of Goddess Shri Mahalasa</h1>
+        </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Divine Origin</h2>
-          <div className="prose text-gray-700 leading-relaxed space-y-4">
-            <p>
-              Shree Mahalasa Narayani is revered as the Mohini avatar of Lord Vishnu, embodying divine 
-              feminine power (Shakti) in its most enchanting form. According to ancient scriptures, 
-              this manifestation occurred during the churning of the cosmic ocean (Samudra Manthan) 
-              when Lord Vishnu appeared as the beautiful Mohini to distribute the nectar of immortality.
-            </p>
-            <p>
-              The name "Mahalasa" is derived from "Maha" (great) and "Lasa" (dance), signifying the 
-              cosmic dance of creation and destruction. As Narayani, she represents the divine consort 
-              energy of Narayana (Vishnu), maintaining the balance of the universe through her grace 
-              and power.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Mythological Significance</h2>
-          <div className="bg-yellow-50 p-6 rounded-lg mb-6">
-            <h3 className="text-xl font-semibold mb-3 text-yellow-700">The Mohini Avatar</h3>
-            <p className="text-gray-700 leading-relaxed">
-              When demons and gods churned the ocean for Amrita, disputes arose over its distribution. 
-              Lord Vishnu took the form of Mohini, an enchanting woman, to ensure the nectar reached 
-              only the righteous. This form became the foundation of Mahalasa worship, representing 
-              divine wisdom that protects dharma through beauty and grace.
-            </p>
-          </div>
-
-          <div className="bg-green-50 p-6 rounded-lg mb-6">
-            <h3 className="text-xl font-semibold mb-3 text-green-700">Protector of Devotees</h3>
-            <p className="text-gray-700 leading-relaxed">
-              Throughout history, Goddess Mahalasa has been known as a fierce protector of her devotees. 
-              During times of persecution and religious upheaval, she guided her followers to safety, 
-              ensuring the preservation of Vedic traditions and cultural heritage across generations.
-            </p>
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Divine Attributes</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-red-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-red-600">Physical Form</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li><strong>Complexion:</strong> Golden radiance like the morning sun</li>
-                <li><strong>Eyes:</strong> Lotus-shaped, filled with compassion</li>
-                <li><strong>Hair:</strong> Long, flowing, adorned with flowers</li>
-                <li><strong>Hands:</strong> Four or eight arms holding divine weapons</li>
-                <li><strong>Attire:</strong> Silk sarees in red, yellow, and white</li>
-                <li><strong>Ornaments:</strong> Traditional gold jewelry and crown</li>
-              </ul>
-            </div>
-
-            <div className="bg-blue-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-blue-600">Sacred Weapons</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li><strong>Conch (Shankha):</strong> Divine sound of Om</li>
-                <li><strong>Discus (Chakra):</strong> Wheel of time and dharma</li>
-                <li><strong>Lotus (Padma):</strong> Symbol of purity and creation</li>
-                <li><strong>Mace (Gada):</strong> Power to destroy evil</li>
-                <li><strong>Sword:</strong> Wisdom cutting through ignorance</li>
-                <li><strong>Trident:</strong> Control over three gunas</li>
-              </ul>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Sacred Stories</h2>
+        {/* Main Content Text */}
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
           
-          <div className="space-y-6">
-            <div className="bg-purple-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-purple-700">The Miracle of Mardol</h3>
-              <p className="text-gray-700 leading-relaxed">
-                When Portuguese forces destroyed the original temple in Verna, the sacred idol of 
-                Mahalasa was mysteriously protected. Devotees found the idol unharmed amidst the 
-                destruction, leading them to believe in the Goddess's divine intervention. This 
-                miracle strengthened their faith and led to the establishment of the new temple in Mardol.
-              </p>
+          {/* Introduction Section */}
+          <div className="mb-8">
+            <div className="flex items-start mb-6">
+              <div className="mr-6 flex-shrink-0">
+                <div className="bg-blue-100 p-2 rounded text-center" style={{width: '140px', height: '200px'}}>
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                    <img src='/devi_maha.jpg'/>
+                    <div className="text-center">Shri Mahalasa Narayani's Charitra</div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 leading-relaxed" style={{color: '#333333'}}>
+                <p className="mb-4">
+                  <strong>The Charitra of Goddess Shri Mahalasa Narayani is considered as the Bhagwad Gita for Kulavis and other followers of Shri Mahalasa Narayani.</strong>
+                </p>
+                <p className="mb-4">
+                  A Parayan or proper reading of the book not only gives one peace of mind, but it is also said to have brought out many devotees from their state of distress. Many have said that this book changed their lives for the better.
+                </p>
+                <p className="mb-4">
+                  <strong>The Charitra in available in Kannada, Marathi and English editions.</strong>
+                </p>
+              </div>
             </div>
 
-            <div className="bg-pink-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-pink-700">The Devotee's Vision</h3>
-              <p className="text-gray-700 leading-relaxed">
-                A devout Saraswat Brahmin named Nagesh Kamath experienced divine visions of the 
-                Goddess, guiding him to establish proper worship. Through these divine communications, 
-                he received instructions for rituals, temple architecture, and the propagation of 
-                her worship across the coastal regions.
-              </p>
-            </div>
-
-            <div className="bg-indigo-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-3 text-indigo-700">Protection During Migration</h3>
-              <p className="text-gray-700 leading-relaxed">
-                During the great migrations from Goa to Karnataka and other coastal regions, devotees 
-                reported numerous instances of divine protection. Ships carrying the sacred symbols 
-                were protected from storms, and new settlements flourished under the Goddess's blessings.
-              </p>
-            </div>
-          </div>
-        </section>
-
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Spiritual Teachings</h2>
-          <div className="bg-gradient-to-r from-orange-50 to-yellow-50 p-6 rounded-lg">
-            <div className="space-y-4 text-gray-700">
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Divine Feminine Power</h3>
-                <p>Mahalasa represents the perfect balance of strength and grace, teaching devotees 
-                that true power lies in compassion and wisdom, not in force alone.</p>
+            <div className="flex items-start mb-6">
+              <div className="mr-6 flex-shrink-0">
+                <div className="bg-blue-100 p-2 rounded text-center" style={{width: '140px', height: '200px'}}>
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                    <img src='/chaitra.jpg'/>
+                    <div className="text-center">The Charitra of Mahalasa Narayani in English</div>
+                  </div>
+                </div>
               </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Protection of Dharma</h3>
-                <p>As the guardian of righteous principles, she shows that defending truth and 
-                justice is a sacred duty, even in the face of overwhelming adversity.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Devotion and Surrender</h3>
-                <p>Her stories emphasize the importance of complete surrender (sharanagati) to the 
-                divine, trusting in the cosmic plan even during times of trial.</p>
-              </div>
-              <div>
-                <h3 className="font-semibold text-lg mb-2">Cultural Preservation</h3>
-                <p>Through her protection of devotees during historical upheavals, she demonstrates 
-                the importance of preserving spiritual traditions and cultural heritage.</p>
+              <div className="flex-1 leading-relaxed" style={{color: '#333333'}}>
+                <p className="mb-4">
+                  To get the Charitra , one can contact Shri Mahalasa Narayani temple at <strong>Harikhandige, Mardol and Kumta</strong>
+                </p>
+                <p className="mb-4">You can also contact :</p>
+                <p className="mb-2">On whatsapp: <strong>8970414801</strong></p>
+                <p className="mb-4">or email at <strong>sureshjpai@gmail.com</strong> for future correspondence.</p>
               </div>
             </div>
           </div>
-        </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Daily Worship</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Morning Rituals</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>• Mangala Aarti at dawn</li>
-                <li>• Sacred bath (Abhishek) with milk and honey</li>
-                <li>• Offering of fresh flowers and fruits</li>
-                <li>• Chanting of sacred mantras</li>
-                <li>• Reading of divine stories</li>
+          {/* Guidelines Section */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold mb-4" style={{color: '#006633'}}>Guidelines for reading of the Charitra</h2>
+            <div className="leading-relaxed" style={{color: '#333333'}}>
+              <ul className="space-y-2 mb-6">
+                <li>• Read this book with purity of thought.</li>
+                <li>• Anyone can read the Charitra .</li>
+                <li>• A word from a Guru would have far-reaching effects.</li>
+                <li>• There is no hard and fast rule that the Parayan should begin on any particular day. However, it is best if it is read daily. If that is not possible, it can be read on Sundays, the day that is dear to Shri Mahalasa Narayani.</li>
+                <li>• The Charitra can also be read on Tuesdays, Fridays, Asthami, Ekadashi, Dwadashi and on all days of Navaratri, besides days of religious importance.</li>
+                <li>• This book should be read with a commitment, pure mind, and utter devotion.</li>
+                <li>• One should have satvik (pure) thoughts and satvik (no onion, no garlic, vegetarian) food.</li>
               </ul>
             </div>
-            <div>
-              <h3 className="text-xl font-semibold mb-3">Evening Prayers</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li>• Sandhya Aarti at sunset</li>
-                <li>• Lighting of diyas and incense</li>
-                <li>• Bhajan and devotional singing</li>
-                <li>• Community prayers</li>
-                <li>• Distribution of prasad</li>
+
+            {/* Special Note Box */}
+            <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+              <div className="flex items-start">
+                <div className="mr-4 mt-1 flex-shrink-0">
+                  <Image
+                    src="/god.jpg"
+                    alt="Shri Mahalasa Narayani"
+                    width={60}
+                    height={80}
+                    className="rounded"
+                  />
+                </div>
+                <div className="text-sm leading-relaxed italic" style={{color: '#333333'}}>
+                  <p>
+                    <em>The benefits of reading the Charitra will be manifold and immediate if read with faith, utter devotion, happiness and concentration.</em>
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            {/* Additional Guidelines */}
+            <div className="leading-relaxed" style={{color: '#333333'}}>
+              <ul className="space-y-2 mb-6">
+                <li>• This should be read before any auspicious function at home.</li>
+                <li>• At least one chapter should be completed in one sitting.</li>
+                <li>• One should take a bath and wear clean clothes.</li>
+                <li>• The place where you are sitting while reading should be clean.</li>
+                <li>• Before the Parayan, achaman should be done and respects offered to Guru, God and ancestors. Then, one should utter Kala, Samvatsara, Rithu, Maasa, Paksha, Tithi, Wara and Nakshatra.</li>
+                <li>• The Goddess's illuminating Charitra should be kept on a chaurangi or manai (wooden reading stand) and must be worshipped.</li>
+                <li>• It should be read either facing east or north.</li>
+                <li>• The reading should be commenced with Shri Mahalasa Narayani's Kavacaham and Asshottara Shatnamamantra (given in the Charitra itself.)</li>
+                <li>• Tribhuvaneshwari Devi's blessed book should be kept at home and worshipped with gandha (sandalwood paste) and flowers. It should be kept perferably in a silk cloth.</li>
+                <li>• After the Parayan, the Charitra's pooja should be performed and mangalaarati shown to it.</li>
               </ul>
             </div>
           </div>
-        </section>
+
+          {/* Pricing Section */}
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold mb-4" style={{color: '#006633'}}>Coverprice:</h3>
+            <div className="leading-relaxed" style={{color: '#333333'}}>
+              <ul className="space-y-1 mb-6">
+                <li>• <strong>Kannada:</strong> Rs 140</li>
+                <li>• <strong>Marathi:</strong> Rs 215</li>
+                <li>• <strong>English:</strong> Rs 150</li>
+              </ul>
+            </div>
+          </div>
+
+          {/* Order Section */}
+          <div className="mb-8">
+            <h3 className="text-lg font-semibold mb-4" style={{color: '#006633'}}>
+              <u>Order a Charitra</u> :
+            </h3>
+            <div className="leading-relaxed" style={{color: '#333333'}}>
+              <p className="mb-4">On whatsapp: <strong>8970414801</strong></p>
+              <p className="mb-4">Alternatively, kindly send email at <strong>sureshjpai@gmail.com</strong> for future correspondence.</p>
+              
+              <p className="font-semibold mb-2" style={{color: '#006633'}}>Bank Account Details :</p>
+              <p className="mb-2">Shri Mahalasa Narayani Devi Kshetra</p>
+              <p className="mb-4">Canara Bank, A/c. Perdoor : <strong>0130200083045</strong> IFSC: <strong>CNRB0010130</strong></p>
+              
+              <p className="mb-2">Shri Mahalasa Narayani Devi Kshetra</p>
+              <p className="mb-4">Union Bank, A/c. Manipal: <strong>520101232336071</strong> IFSC: <strong>UBIN0901288</strong></p>
+              
+              <p className="mb-6">Kindly intimate us after remittance.</p>
+              
+              <p className="mb-4">Alternatively, please send a Money Order for the amount to:</p>
+              
+              <p className="mb-2"><strong>Dharmadarshi,</strong></p>
+              <p className="mb-2">Shri Mahalasa Narayani Devi Kshetra,</p>
+              <p className="mb-2">41, Shiroor, Harikhandige 576 124.</p>
+              <p className="mb-6">Udupi District, Karnataka State. INDIA</p>
+            </div>
+
+            {/* New Charitra Image */}
+            <div className="flex justify-center mb-6">
+              <div className="bg-gray-100 p-2 rounded text-center" style={{width: '120px', height: '200px'}}>
+                <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                    <img src='/god2.jpg'/>
+                  <div className="text-center">The New Charitra of Mahalasa Narayani in Marathi</div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Divider */}
+          <div className="flex justify-center mb-8">
+            <div className="w-16 h-1 bg-blue-400"></div>
+          </div>
+
+          {/* About the Author Section */}
+          <div className="mb-8">
+            <h2 className="text-xl font-bold mb-6" style={{color: '#006633'}}>About the Author</h2>
+            <div className="flex items-start mb-6">
+              <div className="mr-6 flex-shrink-0">
+                <div className="bg-gray-100 p-2 rounded text-center" style={{width: '150px', height: '180px'}}>
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                    <img src='/suresh.jpg'/>
+                    <div className="text-center">Guruji Shri Suresh J Pai</div>
+                  </div>
+                </div>
+              </div>
+              <div className="flex-1 leading-relaxed" style={{color: '#333333'}}>
+                <p className="mb-4">
+                  His Holiness Guruji Shri Suresh J Pai, the Dharmadarshi of Shri Mahalasa Narayani Devi Kshetra, Harikhandige, is the author of The Charitra of Shri Mahalasa Narayani.
+                </p>
+                <p className="mb-4">
+                  Prof. Pai was a commerce lecturer at a Panaji college and was deeply involved in spiritual activities from a very young age. Guruji's aim is the enlightenment of our society through spiritual awakening.
+                </p>
+                <p className="mb-4">
+                  Mother Mahalasa is said to have personally inspired Guruji to pen this path-illuminating <em><strong>magnum opus</strong></em>.
+                </p>
+              </div>
+            </div>
+          </div>
+
+          {/* Other Publications Section */}
+          <div className="mb-8">
+            <h3 className="text-lg font-bold mb-4" style={{color: '#006633'}}>Other Publications from Harikhandige</h3>
+            <p className="text-blue-600 cursor-pointer" style={{color: '#006633'}}>
+              <u>Click here for our other best-selling publications.</u>
+            </p>
+          </div>
+
+          {/* Final Divider and Sacred Text */}
+          <div className="text-center my-8">
+            <div className="flex justify-center mb-4">
+              <div className="w-16 h-1 bg-blue-400"></div>
+            </div>
+            <div className="text-xl font-bold mb-4" style={{color: '#B8860B'}}>
+              || <em>SHRI MAHALASA ARPANAMASTU</em> ||
+            </div>
+            <div className="flex justify-center">
+              <div className="w-16 h-1 bg-blue-400"></div>
+            </div>
+          </div>
+
+        </div>
       </div>
     </div>
   );

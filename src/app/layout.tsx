@@ -16,7 +16,7 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className="font-sans bg-white text-red text-gray-900">
+      <body className="font-sans bg-whe text-red text-gray-900">
         <div className="header-image"></div>
         <Navbar />
         <main>{children}</main>

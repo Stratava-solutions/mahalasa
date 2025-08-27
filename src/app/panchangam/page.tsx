@@ -1,223 +1,389 @@
-'use client'
-import { useState } from 'react';
+import Image from "next/image";
 
 export default function Panchangam() {
-  const [selectedMonth, setSelectedMonth] = useState('current');
-
-  const auspiciousDays = [
-    { date: 'August 15, 2025', day: 'Friday', occasion: 'Mahalasa Jayanti', type: 'major' },
-    { date: 'August 20, 2025', day: 'Wednesday', occasion: 'Ganesha Chaturthi', type: 'festival' },
-    { date: 'August 27, 2025', day: 'Wednesday', occasion: 'Teej', type: 'observance' },
-    { date: 'September 5, 2025', day: 'Friday', occasion: 'Rishi Panchami', type: 'ritual' },
-    { date: 'September 12, 2025', day: 'Friday', occasion: 'Ananta Chaturdashi', type: 'festival' },
-  ];
-
-  const monthlyCalendar = {
-    august: [
-      { date: 1, tithi: 'Ashtami', nakshatra: 'Pushya', yoga: 'Shukla', karana: 'Kaulava' },
-      { date: 2, tithi: 'Navami', nakshatra: 'Ashlesha', yoga: 'Brahma', karana: 'Taitila' },
-      { date: 15, tithi: 'Purnima', nakshatra: 'Uttara Phalguni', yoga: 'Harshana', karana: 'Chatushpada' },
-      { date: 30, tithi: 'Amavasya', nakshatra: 'Hasta', yoga: 'Vajra', karana: 'Shakuni' },
-    ]
-  };
-
   return (
-    <div className="container mx-auto px-4 py-8">
-      <h1 className="text-3xl font-bold text-center mb-8 text-red-600">Panchangam</h1>
-      
-      <div className="max-w-6xl mx-auto">
-        <section className="mb-8 text-center">
-          <div className="bg-gradient-to-r from-yellow-100 to-orange-100 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-2 text-orange-700">
-              श्री महालसा पञ्चाङ्गम्
-            </h2>
-            <p className="text-gray-600">Sacred Calendar for Divine Worship</p>
-            <div className="mt-4 text-sm text-gray-700">
-              <span className="inline-block mx-2">📅 Today: August 10, 2025</span>
-              <span className="inline-block mx-2">🌙 Tithi: Krishna Paksha Saptami</span>
-              <span className="inline-block mx-2">⭐ Nakshatra: Rohini</span>
-            </div>
+    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100())'}}>
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-6 max-w-5xl">
+        
+        {/* Calendar Controls */}
+        <div className="mb-6">
+          <div className="flex items-center justify-center gap-4 mb-4 bg-white p-4 rounded border">
+            <span className="font-medium">Month:</span>
+            <input 
+              type="month" 
+              defaultValue="2025-01"
+              className="border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"
+            />
+            <button className="bg-blue-600 text-white px-6 py-2 rounded hover:bg-blue-700 transition-colors">
+              Go
+            </button>
           </div>
-        </section>
-
-        <div className="grid lg:grid-cols-2 gap-8 mb-8">
-          <section className="bg-red-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-red-600">Upcoming Auspicious Days</h2>
-            <div className="space-y-4">
-              {auspiciousDays.map((day, index) => (
-                <div key={index} className={`p-4 rounded-lg border-l-4 ${
-                  day.type === 'major' ? 'border-red-500 bg-red-50' :
-                  day.type === 'festival' ? 'border-orange-500 bg-orange-50' :
-                  day.type === 'ritual' ? 'border-yellow-500 bg-yellow-50' :
-                  'border-green-500 bg-green-50'
-                }`}>
-                  <div className="flex justify-between items-start">
-                    <div>
-                      <h3 className="font-semibold text-lg">{day.occasion}</h3>
-                      <p className="text-gray-600">{day.date} - {day.day}</p>
-                    </div>
-                    <span className={`px-2 py-1 rounded text-xs font-medium ${
-                      day.type === 'major' ? 'bg-red-200 text-red-800' :
-                      day.type === 'festival' ? 'bg-orange-200 text-orange-800' :
-                      day.type === 'ritual' ? 'bg-yellow-200 text-yellow-800' :
-                      'bg-green-200 text-green-800'
-                    }`}>
-                      {day.type.charAt(0).toUpperCase() + day.type.slice(1)}
-                    </span>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </section>
-
-          <section className="bg-blue-50 p-6 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4 text-blue-600">Panchangam Elements</h2>
-            <div className="space-y-4">
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg mb-2">🌙 Tithi (Lunar Day)</h3>
-                <p className="text-gray-700 text-sm">Current: Krishna Paksha Saptami</p>
-                <p className="text-gray-600 text-xs mt-1">Duration of 12° lunar longitude</p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg mb-2">⭐ Nakshatra (Constellation)</h3>
-                <p className="text-gray-700 text-sm">Current: Rohini</p>
-                <p className="text-gray-600 text-xs mt-1">27 lunar mansions for spiritual timing</p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg mb-2">🧘 Yoga (Auspicious Combination)</h3>
-                <p className="text-gray-700 text-sm">Current: Shukla</p>
-                <p className="text-gray-600 text-xs mt-1">Sun-Moon angular relationship</p>
-              </div>
-              
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg mb-2">⚡ Karana (Half Tithi)</h3>
-                <p className="text-gray-700 text-sm">Current: Kaulava</p>
-                <p className="text-gray-600 text-xs mt-1">11 karanas for daily activities</p>
-              </div>
-
-              <div className="bg-white p-4 rounded-lg shadow-sm">
-                <h3 className="font-semibold text-lg mb-2">🌅 Var (Weekday)</h3>
-                <p className="text-gray-700 text-sm">Current: Saturday (Shanivar)</p>
-                <p className="text-gray-600 text-xs mt-1">Ruled by Saturn - favorable for devotion</p>
-              </div>
-            </div>
-          </section>
+          
+          <div className="flex justify-between items-center mb-2">
+            <button className="text-blue-600 hover:text-blue-800 font-medium">« Previous Month</button>
+            <h2 className="text-xl font-bold" style={{color: '#333333'}}>January 2025</h2>
+            <button className="text-blue-600 hover:text-blue-800 font-medium">Next Month »</button>
+          </div>
         </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Sacred Timings</h2>
-          <div className="grid md:grid-cols-3 gap-6">
-            <div className="bg-green-50 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-3 text-green-700">Brahma Muhurta</h3>
-              <p className="text-2xl font-bold text-green-800">4:30 AM - 5:15 AM</p>
-              <p className="text-sm text-gray-600 mt-2">Most auspicious time for meditation</p>
+        {/* Calendar Grid */}
+        <div className="bg-white border border-gray-300 mb-8">
+          {/* Calendar Header */}
+          <div className="grid grid-cols-7 border-b border-gray-300">
+            <div className="p-2 text-center font-bold text-red-600 border-r border-gray-300">Sunday</div>
+            <div className="p-2 text-center font-bold border-r border-gray-300">Monday</div>
+            <div className="p-2 text-center font-bold border-r border-gray-300">Tuesday</div>
+            <div className="p-2 text-center font-bold border-r border-gray-300">Wednesday</div>
+            <div className="p-2 text-center font-bold border-r border-gray-300">Thursday</div>
+            <div className="p-2 text-center font-bold border-r border-gray-300">Friday</div>
+            <div className="p-2 text-center font-bold text-red-600">Saturday</div>
+          </div>
+          
+          {/* Calendar Rows */}
+          <div className="grid grid-cols-7">
+            {/* First Row */}
+            <div className="p-2 border-r border-b border-gray-300 min-h-24"></div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24"></div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">1</div>
             </div>
-            
-            <div className="bg-yellow-50 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-3 text-yellow-700">Sandhya Kaal</h3>
-              <p className="text-2xl font-bold text-yellow-800">6:45 PM - 7:15 PM</p>
-              <p className="text-sm text-gray-600 mt-2">Twilight prayers and aarti</p>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">2</div>
             </div>
-            
-            <div className="bg-purple-50 p-6 rounded-lg text-center">
-              <h3 className="text-xl font-semibold mb-3 text-purple-700">Abhijit Muhurta</h3>
-              <p className="text-2xl font-bold text-purple-800">12:05 PM - 12:55 PM</p>
-              <p className="text-sm text-gray-600 mt-2">Victory time for important work</p>
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold">3</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SHRI DATTA PADUKA</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Shri Datta Paduka" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Special Pooja to Lord Shri Gurudatta by devotees.
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold text-red-600">4</div>
+            </div>
+            <div className="p-2 border-b border-gray-300 min-h-24">
+              <div className="font-bold text-red-600">5</div>
+            </div>
+
+            {/* Second Row */}
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold text-red-600">5</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SATSANG</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Satsang" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Satsang with His Holiness Guruji Shri Suresh J Pai
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">6</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">7</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">8</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold">9</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SHRI DATTA PADUKA</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Shri Datta Paduka" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Special Pooja to Lord Shri Gurudatta by devotees.
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">10</div>
+            </div>
+            <div className="p-2 border-b border-gray-300 min-h-24">
+              <div className="font-bold text-red-600">11</div>
+            </div>
+
+            {/* Third Row */}
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold text-red-600">12</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SATSANG</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Satsang" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Satsang with His Holiness Guruji Shri Suresh J Pai
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">13</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">14</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">15</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold">16</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SHRI DATTA PADUKA</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Shri Datta Paduka" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Special Pooja to Lord Shri Gurudatta by devotees.
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">17</div>
+            </div>
+            <div className="p-2 border-b border-gray-300 min-h-24">
+              <div className="font-bold text-red-600">18</div>
+            </div>
+
+            {/* Fourth Row */}
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold text-red-600">19</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SATSANG</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Satsang" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Satsang with His Holiness Guruji Shri Suresh J Pai
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">20</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">21</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">22</div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-40">
+              <div className="font-bold">23</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SHRI DATTA PADUKA</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Shri Datta Paduka" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Special Pooja to Lord Shri Gurudatta by devotees.
+              </div>
+            </div>
+            <div className="p-2 border-r border-b border-gray-300 min-h-24">
+              <div className="font-bold">24</div>
+            </div>
+            <div className="p-2 border-b border-gray-300 min-h-24">
+              <div className="font-bold text-red-600">25</div>
+            </div>
+
+            {/* Fifth Row */}
+            <div className="p-2 border-r border-gray-300 min-h-40">
+              <div className="font-bold text-red-600">26</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SATSANG</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Satsang" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Satsang with His Holiness Guruji Shri Suresh J Pai
+              </div>
+            </div>
+            <div className="p-2 border-r border-gray-300 min-h-24">
+              <div className="font-bold">27</div>
+            </div>
+            <div className="p-2 border-r border-gray-300 min-h-24">
+              <div className="font-bold">28</div>
+            </div>
+            <div className="p-2 border-r border-gray-300 min-h-24">
+              <div className="font-bold">29</div>
+            </div>
+            <div className="p-2 border-r border-gray-300 min-h-40">
+              <div className="font-bold">30</div>
+              <div className="bg-green-400 text-white text-xs px-1 mt-1 rounded">SHRI DATTA PADUKA</div>
+              <div className="mt-1">
+                <Image src="/suresh.jpg" alt="Shri Datta Paduka" width={30} height={25} className="rounded" />
+              </div>
+              <div className="text-xs text-blue-600 mt-1 leading-tight">
+                Shri Mahalasa Narayani Devi Kshetra, Harikhandige: Special Pooja to Lord Shri Gurudatta by devotees.
+              </div>
+            </div>
+            <div className="p-2 border-r border-gray-300 min-h-24">
+              <div className="font-bold">31</div>
+            </div>
+            <div className="p-2 min-h-24"></div>
+          </div>
+        </div>
+
+        {/* Category Key */}
+        <div className="bg-white p-4 mb-8 rounded border">
+          <h3 className="text-lg font-bold mb-4" style={{color: '#006633'}}>Category Key</h3>
+          <div className="space-y-2">
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-green-400 rounded"></div>
+              <span>Karyakram/Event</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-blue-400 rounded"></div>
+              <span>Tithi/Date</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-orange-400 rounded"></div>
+              <span>Utsav/Festival</span>
+            </div>
+            <div className="flex items-center gap-2">
+              <div className="w-4 h-4 bg-pink-400 rounded"></div>
+              <span>Vishesh Din/Special Day</span>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Monthly Festivals & Observances</h2>
-          <div className="bg-orange-50 p-6 rounded-lg">
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-orange-700">August 2025</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li><strong>Aug 15:</strong> Mahalasa Jayanti (Shravan Purnima)</li>
-                  <li><strong>Aug 20:</strong> Ganesha Chaturthi</li>
-                  <li><strong>Aug 27:</strong> Hartalika Teej</li>
-                  <li><strong>Aug 30:</strong> Amavasya (New Moon)</li>
-                </ul>
+        {/* Divider */}
+        <div className="flex justify-center mb-8">
+          <div className="w-16 h-1 bg-blue-400"></div>
+        </div>
+
+        {/* Explanations Section */}
+        <div className="bg-white p-6 mb-8 rounded">
+          <h2 className="text-xl font-bold mb-4" style={{color: '#006633'}}>Explanations</h2>
+          
+          {/* Special Note Box */}
+          <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+            <div className="flex items-start">
+              <div className="mr-4 mt-1 flex-shrink-0">
+                <Image
+                  src="/god.jpg"
+                  alt="Shri Mahalasa Narayani"
+                  width={60}
+                  height={80}
+                  className="rounded"
+                />
               </div>
-              <div>
-                <h3 className="text-lg font-semibold mb-3 text-orange-700">September 2025</h3>
-                <ul className="space-y-2 text-gray-700">
-                  <li><strong>Sep 5:</strong> Rishi Panchami</li>
-                  <li><strong>Sep 7:</strong> Krishna Janmashtami</li>
-                  <li><strong>Sep 12:</strong> Ananta Chaturdashi</li>
-                  <li><strong>Sep 17:</strong> Pitru Paksha Begins</li>
-                </ul>
+              <div className="text-sm leading-relaxed" style={{color: '#333333'}}>
+                <p>
+                  <em>In Vedic astrology, Panchang (or Panchangam in Sanskrit) means "five (panch) sense organs (angam)" or "five attributes" of the day: Wara, Tithi, Nakshatra, Yoga and Karana. The last two are also significant for they are a guide on auspicious or inauspicious times. Simply put, Panchang means calendar or almanac in English.</em>
+                </p>
               </div>
             </div>
           </div>
-        </section>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Ritual Guidelines</h2>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div className="bg-indigo-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-indigo-700">Daily Worship Times</h3>
-              <div className="space-y-3">
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-medium">Mangala Aarti:</span>
-                  <span>5:00 AM</span>
-                </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-medium">Madhyana Aarti:</span>
-                  <span>12:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-medium">Sandhya Aarti:</span>
-                  <span>7:00 PM</span>
-                </div>
-                <div className="flex justify-between border-b pb-2">
-                  <span className="font-medium">Shayan Aarti:</span>
-                  <span>9:00 PM</span>
-                </div>
-              </div>
+          <div className="leading-relaxed text-sm" style={{color: '#333333'}}>
+            <p className="mb-4">
+              Two Maasas (months) make a Rithu (season). Three Rithus make one Aayana. There are two Aayanas, Uttarayana & Dakshinayana.
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>AAYANA (Sun's Position):</strong> Uttarayana (When the Sun begins its Nothward movement a day after Winter Solstice, around December 22), Dakshinayana (When the Sun begins its Southward movement a day after Summer Solstice, around June 21 – dates vary)
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>RITHU & MAASA (Season & Month):</strong> <strong>Vasanta</strong> – Chaitra, Vaishakha; <strong>Grishma</strong> – Jyeshta, Ashadha; <strong>Varsha</strong> – Shravana, Bhadrapada; <strong>Sharad</strong> – Ashwin, Karthik; <strong>Hemanth</strong> – Margashirsha, Pausha; <strong>Shishira</strong> – Magha, Phalgun.
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>WARA (Weekday):</strong> Raviwar, Somwar, Mangalwar, Budhwar, Guruwar, Shukrawar, Shaniwar
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>PAKSHA (Lunar cycle):</strong> One Maasa equals to two Pakshas, each consisting of 15 tithis. Shukla Paksha (Shuddha) or the waxing of the moon from Pratipada to Poornima (Full Moon day), Krishna Paksha (Vadya) or waning of the moon from Pratipada to Amavasya (New Moon day).
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>TITHI (Date):</strong> Pratipada (Padya), Dwitiya (Bidige), Tritiya (Tadige), Chaturthi (Chowthi), Panchami, Shashti, Saptami, Ashtami, Navami, Dashami, Ekadashi, Dwadashi, Trayodashi, Chaturdashi, Poornima (in Shukla Paksha)/Amavasya (in Krishna Paksha). These days are also referred to as:
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>NAKSHATRA (Stars):</strong> Ashwini, Bharani, Krittika, Rohini, Mrigashirsha, Aardra, Punarvasu, Pushya, Aslesha, Magha, Poorva Phalguni, Uttara Phalguni, Hasta, Chitra, Swati, Vishakha, Anuradha, Jyeshtha, Mula, Poorva Ashadha, Uttara Ashadha, Shravana, Dhanishta, Shatabhisha, Poorva Bhadrapada, Uttara Bhadrapada, Revati
+            </p>
+            
+            <p className="mb-4">
+              <strong style={{color: '#006633'}}>RASHI (Zodiac Signs):</strong> Mesha (Aries), Vrishabha (Taurus), Mithuna (Gemini), Karkata (Cancer), Simha (Leo), Kanya (Virgo), Tula (Libra), Vrishchika (Scorpio), Dhanu (Sagittarius), Makara (Capricorn), Kumbha (Aquarius), Meena (Pisces).
+            </p>
+            
+            <p className="mb-4">
+              * It is important to know your Rashi and Nakshatra while fixing a date for auspicious events like thread ceremony, marriage, house warming, and so on. Rashi & Nakshatra is also used in selecting the name of a baby.
+            </p>
+            
+            <p className="mb-4">
+              * In our Panchang, we refer to MyPanchang.com, with Udupi as the base. While we recommend MyPanchang, for information required for performing poojas or other rituals, your personal horoscope may be required. Hence, please contact your local priest/astrologer for the same.
+            </p>
+            
+            <p className="mb-4">
+              * Please note that we do not have any control over any external sites and we are not responsible for their contents nor do we vouch for the authenticity of their content. We accept no liability for any issues arising out of such content.
+            </p>
+            
+            <p className="mb-6">
+              * The terminologies we use are commonly used and understood. As such we don't have any particular preference for these.
+            </p>
+          </div>
+        </div>
+
+        {/* Divider */}
+        <div className="flex justify-center mb-8">
+          <div className="w-16 h-1 bg-blue-400"></div>
+        </div>
+
+        {/* Regular Events Section */}
+        <div className="bg-white p-6 mb-8 rounded">
+          <h2 className="text-xl font-bold mb-4" style={{color: '#006633'}}>Regular events at temples</h2>
+          
+          <div className="space-y-6 text-sm leading-relaxed" style={{color: '#333333'}}>
+            <div>
+              <h3 className="font-bold mb-2" style={{color: '#006633'}}>HARIKHANDIGE:</h3>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Every Sunday 11:00 am: Satsang by Shri Suresh Guruji J Pai</li>
+                <li>Anna Santarpana every Sunday afternoon to devotees.</li>
+                <li>Shri Gurudatta Paduka Pooja at Datta Peetha every Thursday at 7:00 am</li>
+                <li>Night Pooja & Arghi every Sankashti</li>
+              </ul>
             </div>
-
-            <div className="bg-pink-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold mb-4 text-pink-700">Special Observances</h3>
-              <ul className="space-y-2 text-gray-700">
-                <li><strong>Tuesdays:</strong> Special worship to Devi</li>
-                <li><strong>Fridays:</strong> Lakshmi Puja and offerings</li>
-                <li><strong>Ekadashi:</strong> Fasting and Vishnu worship</li>
-                <li><strong>Purnima:</strong> Full moon prayers</li>
-                <li><strong>Amavasya:</strong> Ancestral prayers</li>
-                <li><strong>Navratri:</strong> 9-day Devi worship</li>
+            
+            <div>
+              <h3 className="font-bold mb-2" style={{color: '#006633'}}>MARDOL:</h3>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Shri Mahalasa Narayani's Palakhi every Sunday evening</li>
+                <li>Shri Santeri's Palakhi every Panchami</li>
+                <li>Shri Vitobhalankar Pooja every Ekadashi.</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-bold mb-2" style={{color: '#006633'}}>BASRUR:</h3>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Shri Mahalasa Narayani's Palakhi on 1st Sunday of every month at 6:00 pm from Vijaya Dashami to Vaishakha Poornima.</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-bold mb-2" style={{color: '#006633'}}>KUMTA:</h3>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Shri Mahalasa's Palakhi on Sunday evenings following every Amavasya preceded by Darshan Seva in the afternoon.</li>
+              </ul>
+            </div>
+            
+            <div>
+              <h3 className="font-bold mb-2" style={{color: '#006633'}}>MADANGERI:</h3>
+              <ul className="space-y-1 list-disc list-inside">
+                <li>Darshan Seva on Sunday evenings following every Poornima.</li>
               </ul>
             </div>
           </div>
-        </section>
+        </div>
 
-        <section className="mb-8 bg-gradient-to-r from-red-50 to-orange-50 p-6 rounded-lg">
-          <h2 className="text-2xl font-semibold mb-4 text-red-700 text-center">Sacred Mantras for Daily Recitation</h2>
-          <div className="space-y-4 text-center">
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <h3 className="font-semibold text-lg mb-2">Mahalasa Gayatri</h3>
-              <p className="text-sanskrit text-lg text-red-600 mb-2">
-                ॐ महालसायै विद्महे मोहिनी रूपायै धीमहि तन्नो देवी प्रचोदयात्
-              </p>
-              <p className="text-sm text-gray-600">
-                Om Mahalasayai Vidmahe Mohini Rupayai Dhimahi Tanno Devi Prachodayat
-              </p>
-            </div>
-            
-            <div className="p-4 bg-white rounded-lg shadow-sm">
-              <h3 className="font-semibold text-lg mb-2">Beeja Mantra</h3>
-              <p className="text-sanskrit text-xl text-orange-600">
-                ॐ श्रीं ह्रीं क्लीं महालसायै नमः
-              </p>
-              <p className="text-sm text-gray-600">
-                Om Shreem Hreem Kleem Mahalasayai Namah
-              </p>
-            </div>
+        {/* Final Sacred Text */}
+        <div className="text-center my-8">
+          <div className="flex justify-center mb-4">
+            <div className="w-16 h-1 bg-blue-400"></div>
           </div>
-        </section>
+          <div className="text-xl font-bold mb-4" style={{color: '#B8860B'}}>
+            || <em>SHRI MAHALASA ARPANAMASTU</em> ||
+          </div>
+          <div className="flex justify-center">
+            <div className="w-16 h-1 bg-blue-400"></div>
+          </div>
+        </div>
+
       </div>
     </div>
   );

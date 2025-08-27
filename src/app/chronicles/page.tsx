@@ -1,89 +1,165 @@
+import Image from "next/image";
+
 export default function Chronicles() {
   return (
-    <div className="container mx-auto px-4 py-8 text-[#006633]">
-      <h1 className="text-3xl font-bold text-center mb-8 text-red-600">Chronicles</h1>
-      
-      <div className="max-w-4xl mx-auto">
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Historical Origins</h2>
-          <div className="prose text-gray-700 leading-relaxed space-y-4">
-            <p>
-              The worship of Shree Mahalasa Narayani Devi has ancient roots dating back centuries. 
-              According to temple chronicles, the Goddess was originally located in Nepal during Kaliyuga, 
-              then moved to Aurangabad in Maharashtra during periods of religious upheaval.
-            </p>
-            <p>
-              During the Mughal domination, the sacred idol was moved to a secret location in Goa 
-              for protection. The Portuguese conquest later caused the Goddess to be relocated from 
-              Verna to Mardol, where devotees could continue their worship safely.
-            </p>
-          </div>
-        </section>
+    <div className="bg-[#f5f2d8] min-h-screen">
+      {/* Main Content */}
+      <div className="container mx-auto px-4 py-6 max-w-4xl">
+        
+        {/* Title */}
+        <div className="text-center mb-6">
+          <h1 className="text-2xl font-bold text-green-700 mb-4">The Samudra Manthan</h1>
+        </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Migration to Goa</h2>
-          <div className="prose text-gray-700 leading-relaxed space-y-4">
-            <p>
-              Historical documents reveal that Bhagwan Parshuram brought 10 Saraswat Brahmin families 
-              from Trihotra in the north to Gomantak (Goa). The families following Mhalsa Devi 
-              established themselves in Varunapur, known today as Verna.
+        {/* Main Content Text */}
+        <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+          <div className="text-gray-800 leading-relaxed text-justify">
+            <p className="mb-4">
+              Shri Mahalasa Narayani's story is considered to be directly related to the story of Samudra Manthan or the Churning of the Sea, according to the Bhagwat Purana.
             </p>
-            <p>
-              The temple at Old Mardol (Velham or Verna) in Salcette was destroyed by the Portuguese 
-              in 1567 during the forcible Christianization campaign. However, the sacred icon was 
-              rescued by devoted followers who risked their lives to preserve their faith.
+            
+            <p className="mb-4">
+              The Gods and the Asuras (Demons) churned the sea to get back the treasures which got immersed in the sea due to Sage Durvasa's curse. During this churning process emerged the fourteen ratnas (treasures), including Amrut (nectar of life) which could make anyone who drinks it immortal.
             </p>
-          </div>
-        </section>
+            
+            <p className="mb-4">
+              There was a fight between the Gods and demons. In order to help the Gods, Lord Vishnu had to take the avatar (incarnation) of Mohini or the Enchantress.
+            </p>
+            
+            <p className="mb-4">
+              She was so beautiful that the eyes of all demons got riveted on her face. In the meanwhile, she distributed Amrut to the Gods and nothing was left for the demons.
+            </p>
+            
+            <p className="mb-6">
+              <strong className="text-green-700">Shri Mahalasa is another name for Lord Vishnu's Mohini Roopa (incarnation)!</strong>
+            </p>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Temple Consecration</h2>
-          <div className="prose text-gray-700 leading-relaxed space-y-4">
-            <p>
-              When the current temple in Mardol was constructed in the 17th century, the sacred icon 
-              was reconsecrated according to Vedic rites. This marked a new chapter in the temple's 
-              history, ensuring the continuity of worship and devotion.
-            </p>
-            <p>
-              The foundation of modern temples was laid with proper astrological timing. At the 
-              Konchady temple in Mangalore, the foundation was laid on Magha Bahula Chaturthi, 
-              February 9, 1985, at 12:19 PM during Vrishabha Lagna by His Holiness Srimad 
-              Sudheendra Theertha Swamiji.
-            </p>
-          </div>
-        </section>
+            {/* Image with text wrapper */}
+            <div className="mb-6">
+              <div className="float-left mr-6 mb-4">
+                <div className="bg-gray-100 p-2 rounded text-center" style={{width: '200px', height: '250px'}}>
+                  <div className="bg-white p-4 h-full flex items-center justify-center text-sm text-gray-600">
+                    A painting of the Mohini Roopa of Lord Shri Vishnu
+                  </div>
+                </div>
+              </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Preservation of Faith</h2>
-          <div className="prose text-gray-700 leading-relaxed space-y-4">
-            <p>
-              The chronicles of Mahalasa temples across different regions tell a remarkable story 
-              of faith preservation. During Portuguese persecution in Goa, many devotee families 
-              migrated to places like Basrur in Dakshina Kannada, Mangalore, and other coastal areas.
-            </p>
-            <p>
-              These migrations led to the establishment of numerous Mahalasa temples across the 
-              western coast of India, each carrying forward the sacred traditions and maintaining 
-              the spiritual connection with the divine mother.
-            </p>
-          </div>
-        </section>
+              <div className="bg-green-50 p-4 rounded mb-4" style={{marginLeft: '220px'}}>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  There exists another reference to Mohini Avatar in Brahmanda Purana, but Mahalasa is associated with Mohini of Samudra Manthan only.
+                </p>
+              </div>
 
-        <section className="mb-8">
-          <h2 className="text-2xl font-semibold mb-4 text-orange-700">Modern Era</h2>
-          <div className="prose text-gray-700 leading-relaxed space-y-4">
-            <p>
-              Today, Shree Mahalasa Narayani temples continue to serve as centers of spiritual 
-              learning and cultural preservation. The temples maintain ancient rituals while 
-              adapting to modern needs of devotees worldwide.
+              <div className="bg-green-50 p-4 rounded mb-4" style={{marginLeft: '220px'}}>
+                <p className="text-sm text-gray-700 leading-relaxed">
+                  But there is another folklore as to how Mohini turned into Mahalasa. The legend has it that Lord Shiva was also enchanted by Mohini, who promised that when Lord Shiva will be born as Martand Bhairav, Mohini would marry him and at that time she would be called as Mahalasa.
+                </p>
+              </div>
+
+              <div className="clear-both"></div>
+            </div>
+            
+            <p className="mb-4">
+              In course of time Lord Shiva was born as Martand Bhairav and he conquered a demon called Malhar. Hence he was called Malhari, also known as Khandoba. Mohini was born in the house of Tima Shet and the child was named Mahalasa. Malhari later married Mahalasa and thus the concept of Mohini remained associated with Mahalasa.
             </p>
-            <p>
-              The chronicles serve as a testament to the unwavering faith of devotees who, 
-              through centuries of challenges, have preserved and propagated the worship of 
-              the divine mother Mahalasa Narayani.
+            
+            <p className="mb-4">
+              In yet another folklore, Lord Shiva's wife Parvati appeared to him as beautiful as Mohini. Thus, Parvati who was later Mahalasa, is also associated with Mohini incarnation.
+            </p>
+            
+            <p className="mb-6">
+              However, in Mardol and other present-day temples, especially of those belonging to the GSB community, Mahalasa is dissociated from Shiva-Parvati concept and entirely regarded as the Mohini Roopa of Lord Vishnu only. The nomenclature Mahalasa Narayani distinctly corroborates this concept.
             </p>
           </div>
-        </section>
+          
+          {/* Special Note Box */}
+          <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+            <div className="flex items-start">
+              <div className="mr-4 mt-1 flex-shrink-0">
+                <Image
+                  src="/god.jpg"
+                  alt="Shri Mahalasa Narayani"
+                  width={60}
+                  height={80}
+                  className="rounded"
+                />
+              </div>
+              <div className="text-sm text-gray-700 leading-relaxed">
+                <p>
+                  <em><strong className="text-green-700">Shri Mahalasa Narayani</strong>, it may particularly be noted, also wears the holy thread, <strong>Yadnyopavitra</strong>, which is its unique feature.</em>
+                </p>
+              </div>
+            </div>
+          </div>
+          
+          <div className="text-gray-800 leading-relaxed text-justify">
+            <p className="mb-4">
+              The worship of this deity prevailed from the very ancient times among the Saraswat Brahmins from times before their settlement in Goa, or Gomantak as it was known.
+            </p>
+            
+            <p className="mb-4">
+              In the Sahyadri Khand of the Skand Purana, it is said that Parushuram brought 10 Saraswat families in Gomantak from their settlements in Trihotra in the North. These 10 families brought with them their following family deities:
+            </p>
+            
+            <p className="mb-4 ml-6">
+              <strong>Mangueshi, Mahadeva, Mahalaxmi, Mahalasa, Shantadurga, Nagesh and Saptkoteshwar.</strong>
+            </p>
+            
+            <p className="mb-4">
+              Later, more Saraswat families came to Goa and they too brought with them their own family deities.
+            </p>
+
+            {/* Image with text wrapper for second section */}
+            <div className="mb-6">
+              <div className="float-right ml-6 mb-4">
+                <div className="bg-gray-100 p-2 rounded text-center" style={{width: '200px', height: '150px'}}>
+                  <div className="bg-white p-4 h-full flex items-center justify-center text-xs text-gray-600">
+                    Khandoba and Mahalasa killing demons Mani-Malla. Lithograph by Chitrashala Press, Poona. Photo courtesy: Wikipedia Commons
+                  </div>
+                </div>
+              </div>
+
+              <p className="mb-4">
+                In all, there were 66 families which settled in Salcette taluka. Of them, six families settled in Varyenapur or Varunapur (old Mhaddol), commonly known as Vernem during Portuguese rule and Verna now.
+              </p>
+
+              <p className="mb-4">
+                There are many stories associated with how the idol of Mahalasa came to be installed in the temple at Mardol. But the migration of this deity took place from Varunapur or Verna to its present place during the middle of the sixteenth century.
+              </p>
+
+              <div className="clear-both"></div>
+            </div>
+            
+            <p className="mb-4">
+              While the minute details are not known, it is evident that this migration took place during the persecution launched by the Christian missionaries during the Portuguese rule.
+            </p>
+            
+            <p className="mb-4">
+              The Mardol temple is about four and a half century old. In the Year Shaka 1789, Prabhav Samvatsar, the temple was repaired and a copper roofing was fixed. A copper plate inscription in the temple describes this event. Barring this, the entire other original construction is untouched and is indicative of the ancient exquisite workmanship.
+            </p>
+            
+            <p className="mb-4">
+              The idol of Shri Mahalasa is in standing position and has four hands; there is a Trishul (trident) in the right back hand and an Amrut Kumbha in left back hand.
+            </p>
+            
+            <p className="mb-4">
+              A demon, Virochan, is kneeling at the right hand side and he appears to have been held by hair in the right forehand. There is a demon under her feet, and the severed, bleeding head of a demon in her left hand, under which a lion (there are some differences among scholars on the animal) appears to be licking the trickling blood.
+            </p>
+            
+            <p className="mb-6">
+              On the Prabhaval in the background, the name Shri Mahalasa is inscribed in Devanagari along with Shankha (Conch), Chakra (Disc), Sesha, and so on, which signify the association with Lord Vishnu.
+            </p>
+          </div>
+
+          {/* Divider */}
+          <div className="text-center my-8">
+            <div className="text-blue-600 text-sm mb-2"></div>
+            <div className="text-xl font-bold text-yellow-600 mb-2" style={{color: '#B8860B'}}>
+              || <em>SHRI MAHALASA ARPANAMASTU</em> ||
+            </div>
+            <div className="text-blue-600 text-sm"></div>
+          </div>
+        </div>
       </div>
     </div>
   );

@@ -4,7 +4,8 @@
 
 body {
   margin: 0;
-  background: url("/app-bg.png");
+  /* background: url("/app-bg.png"); */
+  background-color: #eee9c0;
 }
 
 .header-image {
