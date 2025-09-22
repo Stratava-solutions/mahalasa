@@ -1,4 +1,5 @@
 "use client";
+
 import { useState } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
@@ -52,18 +53,14 @@ export default function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const handleMouseEnter = (tabName: string) => {
-    if (window.innerWidth >= 768) {
-      setOpenDropdown(tabName);
-    }
+    if (window.innerWidth >= 768) setOpenDropdown(tabName);
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) {
-      setOpenDropdown(null);
-    }
+    if (window.innerWidth >= 768) setOpenDropdown(null);
   };
 
-  const handleMobileDropdownToggle = (tabName: string) => {
+  const toggleMobileDropdown = (tabName: string) => {
     setOpenDropdown(openDropdown === tabName ? null : tabName);
   };
 
@@ -73,13 +70,13 @@ export default function Navbar() {
   };
 
   return (
-    <nav className="bg-orange-50 w-full border-b relative">
-      {/* Mobile Menu Button */}
-      <div className="md:hidden flex justify-between items-center p-4">
-        <span className="font-semibold text-red-600">Menu</span>
+    <nav className="bg-orange-50 border-b border-orange-200 w-full relative z-50">
+      {/* Mobile Menu Header */}
+      <div className="md:hidden flex justify-between items-center px-4 py-3">
+        <span className="font-bold text-red-600">Mahalasa</span>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="p-2 rounded-md text-gray-700 hover:bg-orange-100"
+          className="p-2 rounded-md text-gray-700 hover:bg-orange-100 transition-colors"
         >
           <svg
             className="w-6 h-6"
@@ -107,8 +104,8 @@ export default function Navbar() {
       </div>
 
       {/* Desktop Menu */}
-      <div className="hidden md:block px-2">
-        <ul className="flex flex-wrap justify-center gap-1 py-2">
+      <div className="hidden md:block">
+        <ul className="flex flex-wrap justify-center gap-2 py-2">
           {tabs.map((tab) => (
             <li
               key={tab.name}
@@ -118,12 +115,12 @@ export default function Navbar() {
             >
               <Link
                 href={tab.path}
-                className={`px-2 py-1 text-xs rounded transition-colors cursor-pointer inline-block ${
+                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors inline-block ${
                   pathname === tab.path ||
                   (tab.dropdown &&
                     tab.dropdown.some((item) => pathname === item.path))
                     ? "bg-red-500 text-white"
-                    : "bg-white text-gray-700 hover:bg-orange-100"
+                    : "text-gray-700 hover:bg-orange-100"
                 }`}
               >
                 {tab.name}
@@ -142,25 +139,24 @@ export default function Navbar() {
                 )}
               </Link>
 
+              {/* Dropdown */}
               {tab.dropdown && openDropdown === tab.name && (
-                <div className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg z-50 min-w-48">
-                  <ul className="py-1">
-                    {tab.dropdown.map((item) => (
-                      <li key={item.name}>
-                        <Link
-                          href={item.path}
-                          className={`block px-3 py-2 text-xs text-gray-700 hover:bg-orange-100 transition-colors ${
-                            pathname === item.path
-                              ? "bg-red-50 text-red-600 font-medium"
-                              : ""
-                          }`}
-                        >
-                          {item.name}
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
+                <ul className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg min-w-[180px] z-50">
+                  {tab.dropdown.map((item) => (
+                    <li key={item.name}>
+                      <Link
+                        href={item.path}
+                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
+                          pathname === item.path
+                            ? "bg-red-50 text-red-600 font-medium"
+                            : ""
+                        }`}
+                      >
+                        {item.name}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
               )}
             </li>
           ))}
@@ -169,67 +165,65 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-b shadow-lg z-50">
-          <div className="py-2">
-            {tabs.map((tab) => (
-              <div key={tab.name}>
-                <div className="flex items-center justify-between">
-                  <Link
-                    href={tab.path}
-                    onClick={closeMobileMenu}
-                    className={`flex-1 px-4 py-3 text-sm transition-colors ${
-                      pathname === tab.path ||
-                      (tab.dropdown &&
-                        tab.dropdown.some((item) => pathname === item.path))
-                        ? "bg-red-500 text-white"
-                        : "text-gray-700 hover:bg-orange-100"
-                    }`}
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-orange-200 shadow-lg z-50">
+          {tabs.map((tab) => (
+            <div key={tab.name}>
+              <div className="flex justify-between items-center">
+                <Link
+                  href={tab.path}
+                  onClick={closeMobileMenu}
+                  className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                    pathname === tab.path ||
+                    (tab.dropdown &&
+                      tab.dropdown.some((item) => pathname === item.path))
+                      ? "bg-red-500 text-white"
+                      : "text-gray-700 hover:bg-orange-100"
+                  }`}
+                >
+                  {tab.name}
+                </Link>
+                {tab.dropdown && (
+                  <button
+                    onClick={() => toggleMobileDropdown(tab.name)}
+                    className="px-4 py-3 text-gray-600 hover:bg-orange-100 transition-colors"
                   >
-                    {tab.name}
-                  </Link>
-                  {tab.dropdown && (
-                    <button
-                      onClick={() => handleMobileDropdownToggle(tab.name)}
-                      className="px-4 py-3 text-gray-600 hover:bg-orange-100"
+                    <svg
+                      className={`w-4 h-4 transform transition-transform ${
+                        openDropdown === tab.name ? "rotate-180" : ""
+                      }`}
+                      fill="currentColor"
+                      viewBox="0 0 20 20"
                     >
-                      <svg
-                        className={`w-4 h-4 transform transition-transform ${
-                          openDropdown === tab.name ? "rotate-180" : ""
-                        }`}
-                        fill="currentColor"
-                        viewBox="0 0 20 20"
-                      >
-                        <path
-                          fillRule="evenodd"
-                          d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                          clipRule="evenodd"
-                        />
-                      </svg>
-                    </button>
-                  )}
-                </div>
-
-                {tab.dropdown && openDropdown === tab.name && (
-                  <div className="bg-gray-50 border-t">
-                    {tab.dropdown.map((item) => (
-                      <Link
-                        key={item.name}
-                        href={item.path}
-                        onClick={closeMobileMenu}
-                        className={`block px-8 py-2 text-sm transition-colors ${
-                          pathname === item.path
-                            ? "bg-red-50 text-red-600 font-medium border-l-4 border-red-500"
-                            : "text-gray-600 hover:bg-orange-100"
-                        }`}
-                      >
-                        {item.name}
-                      </Link>
-                    ))}
-                  </div>
+                      <path
+                        fillRule="evenodd"
+                        d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                        clipRule="evenodd"
+                      />
+                    </svg>
+                  </button>
                 )}
               </div>
-            ))}
-          </div>
+
+              {tab.dropdown && openDropdown === tab.name && (
+                <div className="bg-gray-50 border-t">
+                  {tab.dropdown.map((item) => (
+                    <Link
+                      key={item.name}
+                      href={item.path}
+                      onClick={closeMobileMenu}
+                      className={`block px-8 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
+                        pathname === item.path
+                          ? "bg-red-50 text-red-600 font-medium border-l-4 border-red-500"
+                          : ""
+                      }`}
+                    >
+                      {item.name}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+          ))}
         </div>
       )}
     </nav>
