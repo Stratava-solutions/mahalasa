@@ -1,5 +1,9 @@
 import Image from "next/image";
 
+/**
+ * PEW PEW PEW
+ */
+
 export default function AboutPage() {
   return (
     <div className="min-h-screen bg-orange-50 py-6 md:py-8">
