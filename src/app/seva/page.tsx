@@ -10,7 +10,7 @@ export default function Seva() {
         </div>
 
         {/* Main Content */}
-        <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+        <div className=" p-6 rounded-lg shadow-sm mb-6">
           
           {/* Introduction */}
           <div className="leading-relaxed mb-8" style={{color: '#333333'}}>

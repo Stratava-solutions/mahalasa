@@ -21,7 +21,7 @@ export default function ShriGuruCharitra() {
         </div>
 
         {/* Main Content */}
-        <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+        <div className=" p-6 rounded-lg shadow-sm mb-6">
           
           {/* Second Image */}
           <div className="mb-8 text-center">

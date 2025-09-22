@@ -12,7 +12,7 @@ export default function Charitra() {
         </div>
 
         {/* Main Content Text */}
-        <div className="bg-white p-6 rounded-lg shadow-sm mb-6">
+        <div className=" p-6 rounded-lg shadow-sm mb-6">
           
           {/* Introduction Section */}
           <div className="mb-8">
@@ -78,7 +78,7 @@ export default function Charitra() {
               <div className="flex items-start">
                 <div className="mr-4 mt-1 flex-shrink-0">
                   <Image
-                    src="/god.jpg"
+                    src="/small_gold_god.png"
                     alt="Shri Mahalasa Narayani"
                     width={60}
                     height={80}
