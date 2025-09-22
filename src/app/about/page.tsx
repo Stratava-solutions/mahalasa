@@ -1,6 +1,5 @@
 /**
- * 
- * @returns About page
+ * pew pew pew
  */
 
 export default function AboutPage() {
