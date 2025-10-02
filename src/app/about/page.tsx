@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 /**
- * PEW PEW PEW
+ * Go for it
  */
 
 export default function AboutPage() {
