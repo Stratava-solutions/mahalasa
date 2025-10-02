@@ -2,13 +2,13 @@ import Image from "next/image";
 
 export default function Charitra() {
   return (
-    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100%)'}}>
+    <div className="min-h-screen text-primary" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100%)'}}>
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-4xl">
+      <div className="container mx-auto px-4 py-6 max-w-4xl text-primary">
         
         {/* Title */}
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold mb-4" style={{color: '#006633'}}>The Charitra of Goddess Shri Mahalasa</h1>
+          <h1 className="text-2xl font-bold mb-4" >The Charitra of Goddess Shri Mahalasa</h1>
         </div>
 
         {/* Main Content Text */}
@@ -19,13 +19,13 @@ export default function Charitra() {
             <div className="flex items-start mb-6">
               <div className="mr-6 flex-shrink-0">
                 <div className="bg-blue-100 p-2 rounded text-center" style={{width: '140px', height: '200px'}}>
-                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs">
                     <img src='/devi_maha.jpg'/>
                     <div className="text-center">Shri Mahalasa Narayani's Charitra</div>
                   </div>
                 </div>
               </div>
-              <div className="flex-1 leading-relaxed" style={{color: '#333333'}}>
+              <div className="flex-1 leading-relaxed">
                 <p className="mb-4">
                   <strong>The Charitra of Goddess Shri Mahalasa Narayani is considered as the Bhagwad Gita for Kulavis and other followers of Shri Mahalasa Narayani.</strong>
                 </p>
@@ -41,13 +41,13 @@ export default function Charitra() {
             <div className="flex items-start mb-6">
               <div className="mr-6 flex-shrink-0">
                 <div className="bg-blue-100 p-2 rounded text-center" style={{width: '140px', height: '200px'}}>
-                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs">
                     <img src='/chaitra.jpg'/>
                     <div className="text-center">The Charitra of Mahalasa Narayani in English</div>
                   </div>
                 </div>
               </div>
-              <div className="flex-1 leading-relaxed" style={{color: '#333333'}}>
+              <div className="flex-1 leading-relaxed">
                 <p className="mb-4">
                   To get the Charitra , one can contact Shri Mahalasa Narayani temple at <strong>Harikhandige, Mardol and Kumta</strong>
                 </p>
@@ -60,8 +60,8 @@ export default function Charitra() {
 
           {/* Guidelines Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{color: '#006633'}}>Guidelines for reading of the Charitra</h2>
-            <div className="leading-relaxed" style={{color: '#333333'}}>
+            <h2 className="text-xl font-bold mb-4" >Guidelines for reading of the Charitra</h2>
+            <div className="leading-relaxed">
               <ul className="space-y-2 mb-6">
                 <li>• Read this book with purity of thought.</li>
                 <li>• Anyone can read the Charitra .</li>
@@ -74,18 +74,18 @@ export default function Charitra() {
             </div>
 
             {/* Special Note Box */}
-            <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+            <div className="bg-orange-100 border-2 bg-orange_bg border-orange-300 rounded-lg p-4 mb-6">
               <div className="flex items-start">
                 <div className="mr-4 mt-1 flex-shrink-0">
                   <Image
                     src="/small_gold_god.png"
                     alt="Shri Mahalasa Narayani"
-                    width={60}
-                    height={80}
+                    width={100}
+                    height={100}
                     className="rounded"
                   />
                 </div>
-                <div className="text-sm leading-relaxed italic" style={{color: '#333333'}}>
+                <div className="text-md leading-relaxed italic">
                   <p>
                     <em>The benefits of reading the Charitra will be manifold and immediate if read with faith, utter devotion, happiness and concentration.</em>
                   </p>
@@ -94,7 +94,7 @@ export default function Charitra() {
             </div>
 
             {/* Additional Guidelines */}
-            <div className="leading-relaxed" style={{color: '#333333'}}>
+            <div className="leading-relaxed">
               <ul className="space-y-2 mb-6">
                 <li>• This should be read before any auspicious function at home.</li>
                 <li>• At least one chapter should be completed in one sitting.</li>
@@ -112,8 +112,8 @@ export default function Charitra() {
 
           {/* Pricing Section */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4" style={{color: '#006633'}}>Coverprice:</h3>
-            <div className="leading-relaxed" style={{color: '#333333'}}>
+            <h3 className="text-lg font-semibold mb-4" >Coverprice:</h3>
+            <div className="leading-relaxed">
               <ul className="space-y-1 mb-6">
                 <li>• <strong>Kannada:</strong> Rs 140</li>
                 <li>• <strong>Marathi:</strong> Rs 215</li>
@@ -124,14 +124,14 @@ export default function Charitra() {
 
           {/* Order Section */}
           <div className="mb-8">
-            <h3 className="text-lg font-semibold mb-4" style={{color: '#006633'}}>
+            <h3 className="text-lg font-semibold mb-4" >
               <u>Order a Charitra</u> :
             </h3>
-            <div className="leading-relaxed" style={{color: '#333333'}}>
+            <div className="leading-relaxed">
               <p className="mb-4">On whatsapp: <strong>8970414801</strong></p>
               <p className="mb-4">Alternatively, kindly send email at <strong>sureshjpai@gmail.com</strong> for future correspondence.</p>
               
-              <p className="font-semibold mb-2" style={{color: '#006633'}}>Bank Account Details :</p>
+              <p className="font-semibold mb-2" >Bank Account Details :</p>
               <p className="mb-2">Shri Mahalasa Narayani Devi Kshetra</p>
               <p className="mb-4">Canara Bank, A/c. Perdoor : <strong>0130200083045</strong> IFSC: <strong>CNRB0010130</strong></p>
               
@@ -150,8 +150,8 @@ export default function Charitra() {
 
             {/* New Charitra Image */}
             <div className="flex justify-center mb-6">
-              <div className="bg-gray-100 p-2 rounded text-center" style={{width: '120px', height: '200px'}}>
-                <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+              <div className="bg-gray-100 p-2 rounded text-center" style={{width: '500px', height: '200px'}}>
+                <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs">
                     <img src='/god2.jpg'/>
                   <div className="text-center">The New Charitra of Mahalasa Narayani in Marathi</div>
                 </div>
@@ -166,17 +166,17 @@ export default function Charitra() {
 
           {/* About the Author Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-6" style={{color: '#006633'}}>About the Author</h2>
+            <h2 className="text-xl font-bold mb-6" >About the Author</h2>
             <div className="flex items-start mb-6">
               <div className="mr-6 flex-shrink-0">
                 <div className="bg-gray-100 p-2 rounded text-center" style={{width: '150px', height: '180px'}}>
-                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs">
                     <img src='/suresh.jpg'/>
                     <div className="text-center">Guruji Shri Suresh J Pai</div>
                   </div>
                 </div>
               </div>
-              <div className="flex-1 leading-relaxed" style={{color: '#333333'}}>
+              <div className="flex-1 leading-relaxed">
                 <p className="mb-4">
                   His Holiness Guruji Shri Suresh J Pai, the Dharmadarshi of Shri Mahalasa Narayani Devi Kshetra, Harikhandige, is the author of The Charitra of Shri Mahalasa Narayani.
                 </p>
@@ -192,8 +192,8 @@ export default function Charitra() {
 
           {/* Other Publications Section */}
           <div className="mb-8">
-            <h3 className="text-lg font-bold mb-4" style={{color: '#006633'}}>Other Publications from Harikhandige</h3>
-            <p className="text-blue-600 cursor-pointer" style={{color: '#006633'}}>
+            <h3 className="text-lg font-bold mb-4" >Other Publications from Harikhandige</h3>
+            <p className="text-blue-600 cursor-pointer" >
               <u>Click here for our other best-selling publications.</u>
             </p>
           </div>

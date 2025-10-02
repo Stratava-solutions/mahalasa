@@ -101,32 +101,32 @@ export default function TempleContacts() {
     },
   ];
 
- return (
-    <div className="py-10 px-4 md:px-8 lg:px-16 ">
+  return (
+    <div className="py-10 text-primary px-4 md:px-8 lg:px-16 ">
       {/* Header */}
       <div className="text-center max-w-3xl mx-auto mb-10">
         <h1 className="text-4xl font-extrabold text-green-600 mb-4">
           Please do not call for accommodation
         </h1>
-        <p className="text-gray-700 text-sm sm:text-base">
+        <p className=" text-sm sm:text-base">
           You can contact the temple authorities at the given contact
           numbers/e-mail addresses. We cannot confirm that the email
-          addresses/telephone numbers are current, nor can we guarantee you
-          will receive a reply from them.
+          addresses/telephone numbers are current, nor can we guarantee you will
+          receive a reply from them.
         </p>
       </div>
 
       {/* Intro Section */}
       <div className="max-w-4xl mx-auto mb-8">
         <h2 className="text-2xl font-bold mb-2">Contact Details of Temples</h2>
-        <p className="text-gray-700 text-base">
+        <p className=" text-base">
           Devotees can also contact authorities of the various temples to Shri
           Mahalasa Narayani at the following addresses:
         </p>
       </div>
 
       {/* Temple Cards */}
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+      <div className="grid grid-cols-1 sm:grid-cols-1 lg:grid-cols-2 gap-6">
         {templeAddress.map((temple, idx) => (
           <div
             key={idx}
@@ -135,16 +135,16 @@ export default function TempleContacts() {
             <h3 className="text-xl font-bold text-green-600 mb-3">
               {temple.title}
             </h3>
-            <p className="text-gray-700">{temple.add1}</p>
-            <p className="text-gray-700">{temple.add2}</p>
-            <p className="text-gray-700">{temple.add3}</p>
-            {temple.add4 && <p className="text-gray-700">{temple.add4}</p>}
+            <p className="">{temple.add1}</p>
+            <p className="">{temple.add2}</p>
+            <p className="">{temple.add3}</p>
+            {temple.add4 && <p className="">{temple.add4}</p>}
             {temple.add5 && (
-              <p className="text-blue-600 underline break-words">{temple.add5}</p>
+              <p className="text-blue-600 underline break-words">
+                {temple.add5}
+              </p>
             )}
-            {temple.add6 && (
-              <p className="text-gray-700 break-words">{temple.add6}</p>
-            )}
+            {temple.add6 && <p className=" break-words">{temple.add6}</p>}
           </div>
         ))}
       </div>

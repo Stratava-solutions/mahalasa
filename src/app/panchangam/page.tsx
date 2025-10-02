@@ -4,7 +4,7 @@ export default function Panchangam() {
   return (
     <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100())'}}>
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-5xl">
+      <div className="container text-primary mx-auto px-4 py-6 max-w-5xl">
         
         {/* Calendar Controls */}
         <div className="mb-6">
@@ -22,7 +22,7 @@ export default function Panchangam() {
           
           <div className="flex justify-between items-center mb-2">
             <button className="text-blue-600 hover:text-blue-800 font-medium">« Previous Month</button>
-            <h2 className="text-xl font-bold" style={{color: '#333333'}}>January 2025</h2>
+            <h2 className="text-xl font-bold" >January 2025</h2>
             <button className="text-blue-600 hover:text-blue-800 font-medium">Next Month »</button>
           </div>
         </div>
@@ -249,18 +249,18 @@ export default function Panchangam() {
           <h2 className="text-xl font-bold mb-4" style={{color: '#006633'}}>Explanations</h2>
           
           {/* Special Note Box */}
-          <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+          <div className=" border-2 bg-orange_bg border-orange-300 rounded-lg p-4 mb-6">
             <div className="flex items-start">
               <div className="mr-4 mt-1 flex-shrink-0">
                 <Image
                   src="/god.jpg"
                   alt="Shri Mahalasa Narayani"
-                  width={60}
-                  height={80}
+                  width={100}
+                  height={100}
                   className="rounded"
                 />
               </div>
-              <div className="text-sm leading-relaxed" style={{color: '#333333'}}>
+              <div className="text-md leading-relaxed" >
                 <p>
                   <em>In Vedic astrology, Panchang (or Panchangam in Sanskrit) means "five (panch) sense organs (angam)" or "five attributes" of the day: Wara, Tithi, Nakshatra, Yoga and Karana. The last two are also significant for they are a guide on auspicious or inauspicious times. Simply put, Panchang means calendar or almanac in English.</em>
                 </p>
@@ -268,7 +268,7 @@ export default function Panchangam() {
             </div>
           </div>
 
-          <div className="leading-relaxed text-sm" style={{color: '#333333'}}>
+          <div className="leading-relaxed text-sm" >
             <p className="mb-4">
               Two Maasas (months) make a Rithu (season). Three Rithus make one Aayana. There are two Aayanas, Uttarayana & Dakshinayana.
             </p>
@@ -328,7 +328,7 @@ export default function Panchangam() {
         <div className="bg-white p-6 mb-8 rounded">
           <h2 className="text-xl font-bold mb-4" style={{color: '#006633'}}>Regular events at temples</h2>
           
-          <div className="space-y-6 text-sm leading-relaxed" style={{color: '#333333'}}>
+          <div className="space-y-6 text-sm leading-relaxed" >
             <div>
               <h3 className="font-bold mb-2" style={{color: '#006633'}}>HARIKHANDIGE:</h3>
               <ul className="space-y-1 list-disc list-inside">

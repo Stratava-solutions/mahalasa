@@ -64,7 +64,7 @@ export default function Temples() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container text-primary mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8 text-red-600">Temples</h1>
       
       <div className="max-w-6xl mx-auto">

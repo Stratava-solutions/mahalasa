@@ -36,7 +36,7 @@ export default function Invitation() {
   ];
 
   return (
-    <div className="container mx-auto px-4 py-8">
+    <div className="container text-primary mx-auto px-4 py-8">
       <h1 className="text-3xl font-bold text-center mb-8 text-red-600">Invitation</h1>
       
       <div className="max-w-6xl mx-auto">
@@ -53,7 +53,7 @@ export default function Invitation() {
               <p className="text-orange-600 font-semibold">
                 "सर्वे भवन्तु सुखिनः सर्वे सन्तु निरामयाः"
               </p>
-              <p className="text-sm text-gray-600 mt-1">
+              <p className="text-sm  mt-1">
                 May all beings be happy, may all beings be free from illness
               </p>
             </div>
@@ -104,8 +104,8 @@ export default function Invitation() {
                 {regularPrograms.map((program, index) => (
                   <div key={index} className="flex justify-between items-center p-4 bg-white rounded-lg shadow-sm border-l-4 border-yellow-400">
                     <div>
-                      <h4 className="font-semibold text-gray-800">{program.event}</h4>
-                      <p className="text-sm text-gray-600">{program.day}</p>
+                      <h4 className="font-semibold ">{program.event}</h4>
+                      <p className="text-sm ">{program.day}</p>
                     </div>
                     <div className="text-lg font-bold text-yellow-600">
                       {program.time}
@@ -218,7 +218,7 @@ export default function Invitation() {
           <h2 className="text-2xl font-semibold mb-4 text-red-700">Contact for Invitations</h2>
           <div className="space-y-3 text-gray-700">
             <p className="text-lg">
-              <strong>Temple Office:</strong> +91-XXXX-XXXX-XX
+              <strong>Temple Office:</strong> +91-98765 43210
             </p>
             <p className="text-lg">
               <strong>Email:</strong> info@mahalasatemple.org
@@ -228,7 +228,7 @@ export default function Invitation() {
             </p>
           </div>
           <div className="mt-6 p-4 bg-white rounded-lg">
-            <p className="text-sm text-gray-600">
+            <p className="text-sm ">
               For special occasions, advance booking required. All programs follow traditional Vedic timings and COVID-19 safety protocols.
             </p>
           </div>

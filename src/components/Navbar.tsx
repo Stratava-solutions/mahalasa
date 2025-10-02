@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -21,19 +21,11 @@ const tabs = [
       { name: "Mahalasa At Temples", path: "/channels/mahalasa-devi" },
       { name: "Temples", path: "/channels/temples" },
       { name: "Video Gallery", path: "/channels/video-gallery" },
-      // { name: "Live Streaming", path: "/channels/live-streaming" },
-      // { name: "Audio Darshan", path: "/channels/audio-darshan" },
     ],
   },
   {
     name: "ABOUT",
     path: "/about",
-    // dropdown: [
-    //   { name: "Temple History", path: "/about/temple-history" },
-    //   { name: "Deity Information", path: "/about/deity-information" },
-    //   { name: "Temple Architecture", path: "/about/temple-architecture" },
-    //   { name: "Management", path: "/about/management" },
-    // ],
   },
   {
     name: "CONNECT",
@@ -41,7 +33,6 @@ const tabs = [
     dropdown: [
       { name: "Contact Us", path: "/contact" },
       { name: "Temples Contacts", path: "/contact/temples-contact" },
-      // { name: "Feedback", path: "/contact/feedback" },
       { name: "Policies", path: "/contact/policies" },
     ],
   },
@@ -51,13 +42,55 @@ export default function Navbar() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const dropdownRefs = useRef<{ [key: string]: HTMLLIElement | null }>({});
+  const timeoutRef = useRef<any>(null);
+
+  // Close dropdown when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (openDropdown) {
+        const dropdownElement = dropdownRefs.current[openDropdown];
+        if (dropdownElement && !dropdownElement.contains(event.target as Node)) {
+          setOpenDropdown(null);
+        }
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => document.removeEventListener("mousedown", handleClickOutside);
+  }, [openDropdown]);
 
   const handleMouseEnter = (tabName: string) => {
-    if (window.innerWidth >= 768) setOpenDropdown(tabName);
+    if (window.innerWidth >= 768) {
+      // Clear any pending timeout
+      if (timeoutRef.current) {
+        clearTimeout(timeoutRef.current);
+      }
+      setOpenDropdown(tabName);
+    }
   };
 
   const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) setOpenDropdown(null);
+    if (window.innerWidth >= 768) {
+      // Add a small delay before closing to allow moving to dropdown
+      timeoutRef.current = setTimeout(() => {
+        setOpenDropdown(null);
+      }, 150);
+    }
+  };
+
+  const handleDropdownMouseEnter = () => {
+    // Cancel the close timeout when mouse enters dropdown
+    if (timeoutRef.current) {
+      clearTimeout(timeoutRef.current);
+    }
+  };
+
+  const handleDropdownMouseLeave = () => {
+    // Close dropdown when mouse leaves
+    if (window.innerWidth >= 768) {
+      setOpenDropdown(null);
+    }
   };
 
   const toggleMobileDropdown = (tabName: string) => {
@@ -110,6 +143,9 @@ export default function Navbar() {
             <li
               key={tab.name}
               className="relative"
+              ref={(el) => {
+                dropdownRefs.current[tab.name] = el;
+              }}
               onMouseEnter={() => tab.dropdown && handleMouseEnter(tab.name)}
               onMouseLeave={handleMouseLeave}
             >
@@ -141,7 +177,11 @@ export default function Navbar() {
 
               {/* Dropdown */}
               {tab.dropdown && openDropdown === tab.name && (
-                <ul className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg min-w-[180px] z-50">
+                <ul
+                  className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg min-w-[180px] z-50"
+                  onMouseEnter={handleDropdownMouseEnter}
+                  onMouseLeave={handleDropdownMouseLeave}
+                >
                   {tab.dropdown.map((item) => (
                     <li key={item.name}>
                       <Link
@@ -151,6 +191,7 @@ export default function Navbar() {
                             ? "bg-red-50 text-red-600 font-medium"
                             : ""
                         }`}
+                        onClick={() => setOpenDropdown(null)}
                       >
                         {item.name}
                       </Link>
@@ -165,7 +206,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-orange-200 shadow-lg z-50">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-orange-200 shadow-lg z-50 max-h-[80vh] overflow-y-auto">
           {tabs.map((tab) => (
             <div key={tab.name}>
               <div className="flex justify-between items-center">

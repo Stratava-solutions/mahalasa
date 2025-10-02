@@ -3,28 +3,28 @@ import Image from "next/image";
 export default function Factfile() {
   return (
     <div
-      className="min-h-screen"
+      className="min-h-screen text-primary"
       style={{
         background: "linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100%)",
       }}
     >
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-4xl">
+      <div className="container mx-auto px-4 py-6 max-w-4xl text-primary">
         {/* Title */}
-        <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold mb-4" style={{ color: "#006633" }}>
+        <div className="text-center text-primary mb-6">
+          <h1 className="text-2xl font-bold mb-4 text-primary">
             Did You Know?
           </h1>
         </div>
 
         {/* Main Content Text */}
-        <div className=" p-6 rounded-lg shadow-sm mb-6">
+        <div className="text-primary p-6 rounded-lg shadow-sm mb-6">
           {/* Kumkum Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4 text-primary" >
               Kumkum
             </h2>
-            <div className="flex items-start mb-4">
+            <div className="flex items-start bg-inherit mb-4">
               <div className="mr-6">
                 <Image
                   src="/kunkum.jpg"
@@ -35,10 +35,10 @@ export default function Factfile() {
                 />
               </div>
               <div
-                className="flex-1 leading-relaxed"
-                style={{ color: "#333333" }}
+                className="flex-1 text-primary leading-relaxed"
+                
               >
-                <p className="mb-4">
+                <p className="mb-4 text-primary">
                   You can give cash, gold, fruits and flowers as offerings to
                   Shri Mahalasa Narayani. But She can be pleased with a devotee
                   with only a very simple offering of Kumkum (vermillion).{" "}
@@ -46,7 +46,7 @@ export default function Factfile() {
                     The devotee's faith is more important than his offering.
                   </strong>
                 </p>
-                <p>
+                <p className="text-primary">
                   Performing a kumkumarchana, especially with Shri Mahalasa
                   Ashtottara, is highly beneficial.
                 </p>
@@ -61,12 +61,12 @@ export default function Factfile() {
 
           {/* The Holy Thread Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4">
               The Holy Thread
             </h2>
             <p
-              className="leading-relaxed italic mb-4"
-              style={{ color: "#333333" }}
+              className="leading-relaxed text-primary italic mb-4"
+
             >
               <em>
                 Shri Mahalasa wears a Janmaue or Yadnopavita or the Holy Thread?
@@ -82,10 +82,10 @@ export default function Factfile() {
 
           {/* Jagruk Devata Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4" >
               Jagruk Devata
             </h2>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               Shri Mahalasa Narayani is supposed to be a very Jagruk Daivat
               (Vigilant Deity) even in these modern times. Prayers to her, if
               performed from the heart, seldom go unanswered. Ever since this
@@ -100,13 +100,13 @@ export default function Factfile() {
           </div>
 
           {/* Profound Impact Section */}
-          <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+          <div className="mb-8 text-primary">
+            <h2 className="text-xl font-bold mb-4">
               Profound impact
             </h2>
             <p
               className="leading-relaxed italic mb-4"
-              style={{ color: "#333333" }}
+            
             >
               <em>
                 Many of the prayers, stuthis and stotras devoted to Her are not
@@ -124,7 +124,7 @@ export default function Factfile() {
 
           {/* Shri Mahalasa's Charitra Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4" >
               Shri Mahalasa's Charitra
             </h2>
             <div className="flex items-start mb-4">
@@ -133,7 +133,7 @@ export default function Factfile() {
                   className="bg-blue-100 p-2 rounded text-center"
                   style={{ width: "120px", height: "140px" }}
                 >
-                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-primary">
                     <Image
                       src="/devi_maha.jpg"
                       alt="Shri Mahalasa Narayani"
@@ -149,7 +149,6 @@ export default function Factfile() {
               </div>
               <div
                 className="flex-1 leading-relaxed"
-                style={{ color: "#333333" }}
               >
                 <p className="mb-4">
                   The Charitra of Goddess Mahalasa Narayani, authored by His
@@ -168,7 +167,7 @@ export default function Factfile() {
                 </p>
               </div>
             </div>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4 text-primary" >
               The Charitra is available in English, Kannada and Marathi
               versions. To know more about the Charitra and the correct way of
               reading it,{" "}
@@ -183,12 +182,11 @@ export default function Factfile() {
 
           {/* The Kavacham Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4">
               The Kavacham
             </h2>
             <p
               className="leading-relaxed italic mb-4"
-              style={{ color: "#333333" }}
             >
               <em>
                 Among the many stotras dedicated to Shri Mahalasa, the most
@@ -201,7 +199,7 @@ export default function Factfile() {
             </p>
 
             {/* Special Note Box */}
-            <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-4 mb-6">
+            <div className="bg-orange-100 border-2 bg-orange_bg border-orange-300 rounded-lg p-4 mb-6">
               <div className="flex items-start">
                 <div className="mr-4 mt-1 flex-shrink-0">
                   <Image
@@ -213,8 +211,7 @@ export default function Factfile() {
                   />
                 </div>
                 <div
-                  className="text-sm leading-relaxed"
-                  style={{ color: "#333333" }}
+                  className="text-md leading-relaxed"
                 >
                   <p>
                     <em>
@@ -235,7 +232,7 @@ export default function Factfile() {
 
           {/* Sunday, Her day | Palakhi Seva Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4" >
               Sunday, Her day | Palakhi Seva
             </h2>
             <div className="flex items-start mb-4">
@@ -244,7 +241,7 @@ export default function Factfile() {
                   className="bg-gray-100 p-2 rounded text-center "
                   style={{ width: "250px", height: "250px" }}
                 >
-                  <div className="bg-white  flex-col p-2 h-full flex items-center justify-center text-xs text-gray-600">
+                  <div className="bg-white  flex-col p-2 h-full flex items-center justify-center text-xs ">
                     <Image
                       src="/devotees.jpg"
                       alt="dev"
@@ -261,7 +258,6 @@ export default function Factfile() {
               </div>
               <div
                 className="flex-1 leading-relaxed"
-                style={{ color: "#333333" }}
               >
                 <p className="mb-4">
                   While every day is important, Sundays hold a special
@@ -277,7 +273,7 @@ export default function Factfile() {
                 </p>
               </div>
             </div>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4">
               It is also said that if you happen to be at a temple where Her
               Palakhi is to be taken out (generally this happens in the
               evenings), you are not supposed to leave the temple without taking
@@ -292,12 +288,12 @@ export default function Factfile() {
 
           {/* Dhool Bhet Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4" >
               Dhool Bhet
             </h2>
             <p
               className="leading-relaxed italic mb-4"
-              style={{ color: "#333333" }}
+              
             >
               <em>
                 While our prayers and poojas are offered only after taking a
@@ -319,10 +315,10 @@ export default function Factfile() {
 
           {/* Navaratri Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4" >
               Navaratri
             </h2>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               The most important days of Utsav (festival) are during Navaratri
               which falls during the first fortnight of Ashwin (Ashweeja). This
               is a time when all Her temples are packed with devotees flocking
@@ -339,13 +335,12 @@ export default function Factfile() {
 
           {/* Spirituality for all Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4" >
               Spirituality for all
             </h2>
             <div className="flex items-start mb-4">
               <div
                 className="flex-1 leading-relaxed"
-                style={{ color: "#333333" }}
               >
                 <p className="mb-4">
                   Shri Mahalasa Narayani's temple at Harikhandige (
@@ -370,7 +365,7 @@ export default function Factfile() {
                   className="bg-gray-100 rounded text-center"
                   style={{ width: "200px", height: "200px" }}
                 >
-                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-gray-600">
+                  <div className="bg-white p-2 h-full flex flex-col items-center justify-center text-xs text-primary">
                     <Image
                       src="/suresh_pai.jpg"
                       alt="pai"
@@ -394,10 +389,10 @@ export default function Factfile() {
 
           {/* Direct participation Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4">
               Direct participation
             </h2>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               It is amazing that Shri Mahalasa Narayani Devi Kshetra,
               Harikhandige, is one spiritual centre where the direct
               participation of devotees — along with vaidiks and priests, or
@@ -416,23 +411,23 @@ export default function Factfile() {
 
           {/* The four-and-a-half gotras Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
+            <h2 className="text-xl font-bold mb-4">
               The four-and-a-half gotras
             </h2>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               Shri Mahalasa's Kulavis and Mahajans belong to the following "four
               and a half" Gotras (a form of lineage that is unique to a
               particular family among Hindus. A boy and girl from the same Gotra
               cannot marry, because they are considered to be siblings):
             </p>
-            <div className="ml-6 mb-4" style={{ color: "#333333" }}>
+            <div className="ml-6 mb-4" >
               <p className="mb-2">a. Kaunsha</p>
               <p className="mb-2">b. Bharadwaj</p>
               <p className="mb-2">c. Atri</p>
               <p className="mb-2">d. Gargeya</p>
               <p className="mb-2">e. Vatsa</p>
             </div>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               While those from the Kaunsha Gotra, whenever they visit the
               temple, are supposed to worship Shri Mahalasa and then their Kula
               Purush, i.e., Simha Purush, devotees belonging to the other Gotras
@@ -442,7 +437,7 @@ export default function Factfile() {
             </p>
             <p
               className="leading-relaxed text-sm mb-4"
-              style={{ color: "#333333" }}
+              
             >
               (You may note that there are five Gotras mentioned but the intro
               said "four and a half". Vatsa Gotris, for reasons not known, are
@@ -460,7 +455,7 @@ export default function Factfile() {
             <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
               Her Kulavis
             </h2>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               <em>
                 Shri Mahalasa is worshipped by a large section of the Hindu
                 society. Her Kulavis are mainly Gowda Saraswat Brahmins. Other
@@ -483,12 +478,12 @@ export default function Factfile() {
             <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
               Parashurama's instructions
             </h2>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               Lord Parshurama's instructions to the devotees of Shri Mahalasa
               is: She is to be worshipped during the nine parts of the day,
               namely,
             </p>
-            <div className="ml-6 mb-4 space-y-1" style={{ color: "#333333" }}>
+            <div className="ml-6 mb-4 space-y-1" >
               <p>Pratahkal as Adhishakti,</p>
               <p>Purvanha as Mahamaya,</p>
               <p>Madhyanha as Mulaprakruti,</p>
@@ -503,7 +498,7 @@ export default function Factfile() {
             <p className="font-semibold mb-4" style={{ color: "#006633" }}>
               She is to be worshipped by reciting 24 names:
             </p>
-            <p className="leading-relaxed mb-4" style={{ color: "#333333" }}>
+            <p className="leading-relaxed mb-4" >
               <strong>Durga, Bhadrakali</strong>, Vijaya, Vaishnavi, Kumuda,
               Dandika, Krishna, Madhavi, Kanyaka, Maya, Narayani, Shanta,
               Sharada, Ambika, Katyayani, Baldurga, Maha Yogini, Adhishwari, Yog
@@ -518,14 +513,14 @@ export default function Factfile() {
           </div>
 
           {/* Final Blessing Box */}
-          <div className="bg-orange-100 border-2 border-orange-300 rounded-lg p-6 mb-6">
+          <div className="bg-orange-100 border-2 border-orange-300 bg-ornage_bg rounded-lg p-6 mb-6">
             <div className="flex items-start">
               <div className="mr-4 mt-1 flex-shrink-0">
                 <Image
                   src="/small_gold_god.png"
                   alt="Shri Mahalasa Narayani"
-                  width={60}
-                  height={80}
+                  width={100}
+                  height={100}
                   className="rounded"
                 />
               </div>
@@ -536,8 +531,8 @@ export default function Factfile() {
                 </div>
 
                 <p
-                  className="text-sm leading-relaxed italic mb-4"
-                  style={{ color: "#333333" }}
+                  className="text-md leading-relaxed italic mb-4"
+                  
                 >
                   <em>
                     Blessed be the devotees of Mother Mahalasa with peace and

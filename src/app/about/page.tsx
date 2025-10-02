@@ -6,7 +6,7 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-orange-50 py-6 md:py-8">
+    <div className="min-h-screen text-primary bg-orange-50 py-6 md:py-8">
       <div className="container mx-auto px-4">
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-red-600 mb-4 md:mb-6 text-center">
@@ -21,13 +21,13 @@ export default function AboutPage() {
               className="mx-auto border-4 border-yellow-600 rounded-lg shadow-lg"
               priority
             />
-            <h1 className="text-sm  font-bold text-green-600 mb-4 md:my-6 text-center">
+            <h1 className="text-sm  font-bold text-primary mb-4 md:my-6 text-center">
               Guruji Shri Suresh J Pai penning a reply to a devotee at Shri
               Mahalasa Narayani Devi Kshetra, Harikhandige
             </h1>
           </div>
           <div className="mb-8">
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className=" leading-relaxed mb-4">
               Nowadays, as the thirst for spirituality arises, many people,
               among them our own community members, are lost when it comes to
               knowing who a true Guru is. I have seen them attending the
@@ -112,7 +112,7 @@ export default function AboutPage() {
             </h1>
           </div>
           <div className="mb-8">
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className=" leading-relaxed mb-4">
               Anyway, with whatever limited interaction I had with Shri Suresh
               Pai, I found him out to be a very down-to-earth, simple,
               soft-spoken, genial human being. Many people came to him to seek
@@ -247,7 +247,7 @@ export default function AboutPage() {
             </h1>
           </div>
           <div className="mb-8">
-            <p className="text-gray-700 leading-relaxed mb-4">
+            <p className=" leading-relaxed mb-4">
               Due to reasons way beyond our control, our popular website went
               offline during the last almost 2 years.
               <br />
@@ -389,7 +389,7 @@ export default function AboutPage() {
 
           <div className="prose max-w-none">
             <div className="mb-8">
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className=" leading-relaxed mb-4">
                 The Shree Mahalasa Narayani Temple stands as a beacon of divine
                 grace and spiritual heritage, dedicated to Goddess Mahalasa
                 Narayani, the enchanting Mohini avatar of Lord Vishnu. Located
@@ -398,7 +398,7 @@ export default function AboutPage() {
                 centuries.
               </p>
 
-              <p className="text-gray-700 leading-relaxed mb-4">
+              <p className=" leading-relaxed mb-4">
                 Goddess Mahalasa is revered as the presiding deity of the Gaud
                 Saraswat Brahmin community and is worshipped across many regions
                 of India. Known for her compassionate nature and protective
@@ -412,7 +412,7 @@ export default function AboutPage() {
                 <h3 className="text-lg md:text-xl font-semibold text-red-600 mb-3">
                   Temple History
                 </h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className=" text-sm leading-relaxed">
                   Established centuries ago, this temple has withstood the test
                   of time, preserving ancient rituals and traditions. The
                   temple's architecture reflects the rich cultural heritage of
@@ -425,7 +425,7 @@ export default function AboutPage() {
                 <h3 className="text-lg md:text-xl font-semibold text-orange-600 mb-3">
                   Divine Significance
                 </h3>
-                <p className="text-gray-700 text-sm leading-relaxed">
+                <p className=" text-sm leading-relaxed">
                   Mahalasa Narayani represents the perfect balance of power and
                   compassion. As the Mohini avatar, she embodies beauty, wisdom,
                   and divine protection, making this temple a sacred destination
@@ -444,7 +444,7 @@ export default function AboutPage() {
                   <h4 className="font-semibold text-red-600 mb-2">
                     Sacred Architecture
                   </h4>
-                  <p className="text-gray-700 text-sm">
+                  <p className=" text-sm">
                     Traditional temple design with intricate carvings and
                     spiritual symbolism
                   </p>
@@ -454,7 +454,7 @@ export default function AboutPage() {
                   <h4 className="font-semibold text-orange-600 mb-2">
                     Daily Rituals
                   </h4>
-                  <p className="text-gray-700 text-sm">
+                  <p className=" text-sm">
                     Four times daily aarti with traditional prayers and
                     offerings
                   </p>
@@ -464,7 +464,7 @@ export default function AboutPage() {
                   <h4 className="font-semibold text-red-600 mb-2">
                     Cultural Programs
                   </h4>
-                  <p className="text-gray-700 text-sm">
+                  <p className=" text-sm">
                     Regular festivals, bhajan sessions, and community gatherings
                   </p>
                 </div>
@@ -475,7 +475,7 @@ export default function AboutPage() {
               <h3 className="text-lg md:text-xl font-semibold text-red-700 mb-3">
                 Our Mission
               </h3>
-              <p className="text-gray-700 leading-relaxed">
+              <p className=" leading-relaxed">
                 To preserve and promote the sacred traditions of Goddess
                 Mahalasa worship while fostering spiritual growth, community
                 unity, and cultural preservation for future generations.

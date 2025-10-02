@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function Chronicles() {
   return (
-    <div className="text-black min-h-screen">
+    <div className="text-primary min-h-screen">
       {/* Main Content */}
       <div className="container mx-auto px-4 py-6 max-w-4xl">
         {/* Title */}
@@ -14,7 +14,7 @@ export default function Chronicles() {
 
         {/* Main Content Text */}
         <div className="p-6 rounded-lg shadow-sm mb-6">
-          <div className="text-gray-800 leading-relaxed text-justify">
+          <div className="text-primary leading-relaxed text-justify">
             <p className="mb-4">
               Shri Mahalasa Narayani's story is considered to be directly
               related to the story of Samudra Manthan or the Churning of the
@@ -42,7 +42,7 @@ export default function Chronicles() {
             </p>
 
             <p className="mb-6">
-              <strong className="text-green-700">
+              <strong className="text-primary">
                 Shri Mahalasa is another name for Lord Vishnu's Mohini Roopa
                 (incarnation)!
               </strong>
@@ -72,7 +72,7 @@ export default function Chronicles() {
                 className="bg-green-50 p-4 rounded mb-4"
                 style={{ marginLeft: "220px" }}
               >
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm leading-relaxed">
                   There exists another reference to Mohini Avatar in Brahmanda
                   Purana, but Mahalasa is associated with Mohini of Samudra
                   Manthan only.
@@ -83,7 +83,7 @@ export default function Chronicles() {
                 className="bg-green-50 p-4 rounded mb-4"
                 style={{ marginLeft: "220px" }}
               >
-                <p className="text-sm text-gray-700 leading-relaxed">
+                <p className="text-sm  leading-relaxed">
                   But there is another folklore as to how Mohini turned into
                   Mahalasa. The legend has it that Lord Shiva was also enchanted
                   by Mohini, who promised that when Lord Shiva will be born as
@@ -119,7 +119,7 @@ export default function Chronicles() {
           </div>
 
           {/* Special Note Box */}
-          <div className=" border-2 border-orange-300 rounded-lg p-4 mb-6">
+          <div className=" border-2 border-orange-300 bg-orange_bg rounded-lg p-4 mb-6">
             <div className="flex items-start">
               <div className=" mr-4 mt-1 flex-shrink-0">
                 <Image
@@ -130,10 +130,10 @@ export default function Chronicles() {
                   className="rounded"
                 />
               </div>
-              <div className="text-sm text-gray-700 leading-relaxed">
+              <div className="text-md  leading-relaxed">
                 <p>
                   <em>
-                    <strong className="text-green-700">
+                    <strong className="text-primary">
                       Shri Mahalasa Narayani
                     </strong>
                     , it may particularly be noted, also wears the holy thread,{" "}
@@ -144,7 +144,7 @@ export default function Chronicles() {
             </div>
           </div>
 
-          <div className="text-gray-800 leading-relaxed text-justify">
+          <div className=" leading-relaxed text-justify">
             <p className="mb-4">
               The worship of this deity prevailed from the very ancient times
               among the Saraswat Brahmins from times before their settlement in
@@ -181,7 +181,7 @@ export default function Chronicles() {
                     height={180}
                     className="rounded mb-2"
                   />
-                  <p className="text-xs text-gray-600 text-center">
+                  <p className="text-xs text-primary text-center">
                     Khandoba and Mahalasa killing <br />
                     demons Mani-Malla. Lithograph <br />
                     by Chitrashala Press, Poona. <br />
@@ -246,14 +246,14 @@ export default function Chronicles() {
 
           {/* Divider */}
           <div className="text-center my-8">
-            <div className="text-blue-600 text-sm mb-2"></div>
+            <div className="text-primary text-sm mb-2"></div>
             <div
-              className="text-xl font-bold text-yellow-600 mb-2"
+              className="text-xl font-boldtext-primary mb-2"
               style={{ color: "#B8860B" }}
             >
               || <em>SHRI MAHALASA ARPANAMASTU</em> ||
             </div>
-            <div className="text-blue-600 text-sm"></div>
+            <div className="text-primary text-sm"></div>
           </div>
         </div>
       </div>

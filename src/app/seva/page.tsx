@@ -2,18 +2,18 @@ export default function Seva() {
   return (
     <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100())'}}>
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-4xl">
+      <div className="container text-primary mx-auto px-4 py-6 max-w-4xl">
         
         {/* Title */}
         <div className="text-center mb-6">
-          <h1 className="text-2xl font-bold mb-4" style={{color: '#006633'}}>Perform Seva to Shri Mahalasa Narayani at Harikhandige,karnataka</h1>
+          <h1 className="text-2xl font-bold mb-4" >Perform Seva to Shri Mahalasa Narayani at Harikhandige,karnataka</h1>
         </div>
 
         {/* Main Content */}
         <div className=" p-6 rounded-lg shadow-sm mb-6">
           
           {/* Introduction */}
-          <div className="leading-relaxed mb-8" style={{color: '#333333'}}>
+          <div className="leading-relaxed mb-8" >
             <p className="mb-4">
               There are many devotees who wish to perform Seva to the Kuladevata but cannot do so because of the distances and paucity of time. With Her inspirations, we are now bringing to Her Kulavis and other devotees a golden opportunity to offer Sevas to Shri Mahalasa Narayani.
             </p>
@@ -24,8 +24,8 @@ export default function Seva() {
           </div>
 
           {/* Address Section */}
-          <div className="mb-8 leading-relaxed" style={{color: '#333333'}}>
-            <p className="mb-2"><strong style={{color: '#006633'}}>Dharmadarshi,</strong></p>
+          <div className="mb-8 leading-relaxed" >
+            <p className="mb-2"><strong >Dharmadarshi,</strong></p>
             <p className="mb-2">Shri Mahalasa Narayani Devi Kshetra,</p>
             <p className="mb-2">41, Shiroor, Harikhandige 576 124.</p>
             <p className="mb-2">Udupi District, Karnataka State.</p>
@@ -33,8 +33,8 @@ export default function Seva() {
           </div>
 
           {/* Bank Transfer Section */}
-          <div className="mb-8 leading-relaxed" style={{color: '#333333'}}>
-            <p className="mb-4"><strong style={{color: '#006633'}}>Alternatively, you can transfer the amount to the following accounts:</strong></p>
+          <div className="mb-8 leading-relaxed" >
+            <p className="mb-4"><strong >Alternatively, you can transfer the amount to the following accounts:</strong></p>
             
             <div className="mb-4">
               <p className="mb-2">Shri Mahalasa Narayani Devi Kshetra,</p>
@@ -52,7 +52,7 @@ export default function Seva() {
           </div>
 
           {/* Instructions Section */}
-          <div className="mb-8 leading-relaxed" style={{color: '#333333'}}>
+          <div className="mb-8 leading-relaxed" >
             <p className="mb-4">
               Please inform us by e-mail after this has been done. Please mention your full name, date of birth, sex, Gotra, Janma Rashi & Nakshatra, Seva requested, date of seva, amount you wish to remit, comments, if any, and your full postal address. The Seva will be performed on the date you specify.
             </p>
@@ -72,12 +72,12 @@ export default function Seva() {
           </div>
 
           {/* Booking Instructions */}
-          <div className="mb-8 text-center leading-relaxed" style={{color: '#006633'}}>
+          <div className="mb-8 text-center leading-relaxed" >
             <p className="mb-4 text-lg">
               <em>Please book a Seva at least 10 days in advance so as to enable us to make the necessary arrangements. On receipt of your request and M.O. or successful bank transfer, the Seva will be performed on the date specified by you and the Prasad will be sent by post to the address you have given.</em>
             </p>
             
-            <p className="text-xl font-bold mb-6" style={{color: '#006633'}}>
+            <p className="text-xl font-bold mb-6" >
               <em>Dev Bare Karon!</em>
             </p>
           </div>

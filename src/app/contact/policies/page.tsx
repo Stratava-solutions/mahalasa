@@ -1,6 +1,6 @@
 export default function Policies() {
   return (
-    <div className="max-w-5xl mx-auto px-4 py-12 sm:py-16">
+    <div className="max-w-5xl mx-auto px-4 text-primary py-12 sm:py-16">
       {/* Main Header */}
       <h1 className="text-4xl sm:text-5xl font-extrabold text-green-700 text-center mb-8">
         Disclaimer & Privacy Policies
@@ -9,7 +9,7 @@ export default function Policies() {
       {/* Disclaimer Section */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-green-600 mb-4">Disclaimer</h2>
-        <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
+        <div className="space-y-4  text-base sm:text-lg leading-relaxed">
           <p>
             The details provided in this site are purely informative, and we assume no responsibility for any controversy that may arise from the interpretation of the story, history, stotras and stuthis, and other facts given here.
           </p>
@@ -37,7 +37,7 @@ export default function Policies() {
       {/* Privacy Policy Section */}
       <section className="mb-12">
         <h2 className="text-2xl font-bold text-green-600 mb-4">Privacy Policy</h2>
-        <div className="space-y-4 text-gray-700 text-base sm:text-lg leading-relaxed">
+        <div className="space-y-4  text-base sm:text-lg leading-relaxed">
           <p>
             Our privacy policy is very simple. Any information that you volunteer to give us via e-mail, entry into guestbook or so on, will not be given out to anyone or any entity under any circumstances.
           </p>

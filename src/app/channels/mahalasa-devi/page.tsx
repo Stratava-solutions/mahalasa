@@ -18,15 +18,15 @@ export default function MahalasaDevi() {
   const [sliderRef, instanceRef] = useKeenSlider<HTMLDivElement>({
     loop: true,
     slides: {
-      perView: 3,
+      perView: 2, // <-- show 2 per slide
       spacing: 16,
     },
     breakpoints: {
       "(max-width: 1024px)": {
-        slides: { perView: 2, spacing: 12 },
+        slides: { perView: 2, spacing: 12 }, // still 2 on tablets
       },
       "(max-width: 640px)": {
-        slides: { perView: 1, spacing: 8 },
+        slides: { perView: 1, spacing: 8 }, // 1 on mobile
       },
     },
   });
@@ -43,24 +43,24 @@ export default function MahalasaDevi() {
   }, [instanceRef]);
 
   return (
-    <div className="relative text-center mb-6">
-      <h2 className="text-2xl font-bold text-green-700 my-4">
+    <div className="relative text-center mb-6 w-md max-w-6xl mx-auto">
+      <h2 className="text-2xl font-bold text-green-700 my-4 ">
         Shri Mahalasa Narayani at various temples
       </h2>
 
       {/* Slider */}
-      <div ref={sliderRef} className="keen-slider">
+      <div ref={sliderRef} className="keen-slider flex flex-wrap w-sm overflow-hidden">
         {photos.map((photo, idx) => (
           <div
             key={idx}
-            className="keen-slider__slide flex flex-col items-center"
+            className="keen-slider__slide flex flex-col items-center px-2"
           >
             <Image
               src={photo.src}
               alt={photo.caption}
-              width={410}
-              height={551}
-              className="mx-auto border-4 border-yellow-600 rounded-lg shadow-lg"
+              width={400}
+              height={500}
+              className="border-4 border-yellow-600 rounded-lg shadow-lg object-cover w-full"
               priority
             />
             <p className="text-sm text-gray-600 mt-2 italic">{photo.caption}</p>
