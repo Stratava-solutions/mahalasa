@@ -23,12 +23,12 @@ export default function LeftSidebar() {
   ];
 
   return (
-<div className="bg-yellow-100 p-6" style={{ width: '250px' }}>
+<div className="bg-yellow-100 p-6 w-full sm:w-64 md:w-96 lg:w-80 xl:w-96">
       {/* Header */}
       <div className="mb-6">
         <p className="text-blue-600 text-lg mb-4">
           To get the above information -- and MORE -- in your e-mail inbox daily,{' '}
-          <a href="#" className="underline hover:text-blue-800">
+          <a target='_blank' href="/panchang-in-inbox" className="underline hover:text-blue-800">
             click here
           </a>
           .

@@ -1,14 +1,14 @@
-import React from 'react';
+import React from "react";
 
 export default function RightSidebar() {
   const informationLinks = [
-    { title: 'Ghar Wapsi: A Miracle', url: '#' },
-    { title: 'Experience of a Seeker', url: '#' },
-    { title: 'Panchang in Inbox', url: '#' }
+    { title: "Ghar Wapsi: A Miracle", url: "/about" },
+    { title: "Experience of a Seeker", url: "/about" },
+    { title: "Panchang in Inbox", url: "/panchangam" },
   ];
 
   return (
-<div className="bg-yellow-100 p-6" style={{ width: '250px' }}>
+    <div className="bg-yellow-100 p-6 w-full sm:w-64 md:w-96 lg:w-80 xl:w-96">
       {/* NEWS Section */}
       <div className="mb-6">
         <div className="bg-green-800 text-white px-6 py-3">
@@ -19,7 +19,9 @@ export default function RightSidebar() {
             SHRI GURU CHARITHRA
           </h3>
           <p className="text-blue-600 text-lg leading-relaxed">
-            The Holy Granth Shri Guru Charithra authored by Guruji Shri Suresh J. Pai is now available in English, Kannada and Marathi . To get your copy please call on # No 8970414801.
+            The Holy Granth Shri Guru Charithra authored by Guruji Shri Suresh
+            J. Pai is now available in English, Kannada and Marathi . To get
+            your copy please call on # No 8970414801.
           </p>
         </div>
       </div>
@@ -34,8 +36,8 @@ export default function RightSidebar() {
             {informationLinks.map((link, index) => (
               <li key={index} className="flex items-start">
                 <span className="inline-block w-4 h-4 bg-gray-400 mt-1 mr-3 flex-shrink-0"></span>
-                <a 
-                  href={link.url} 
+                <a
+                  href={link.url}
                   className="text-blue-600 text-lg hover:text-blue-800 hover:underline"
                 >
                   {link.title}
@@ -60,8 +62,12 @@ export default function RightSidebar() {
             </button>
           </div>
           <p className="text-gray-700 text-base">
-            For more videos, go to{' '}
-            <a href="#" className="text-blue-600 hover:text-blue-800 hover:underline">
+            For more videos, go to{" "}
+            <a
+             target="_blank"
+              href="https://www.youtube.com/@shrikantshenoy/videos"
+              className="text-blue-600 hover:text-blue-800 hover:underline"
+            >
               Videos Page
             </a>
           </p>
@@ -69,16 +75,39 @@ export default function RightSidebar() {
       </div>
 
       {/* ON FACEBOOK Section */}
-      <div>
-        <div className="bg-green-800 text-white px-6 py-3">
-          <h2 className="text-3xl font-bold">ON FACEBOOK</h2>
+      <div className="bg-yellow-100 p-6 flex justify-center">
+        {/* Facebook Page Embed */}
+        <div className="w-full max-w-[400px] md:max-w-[500px]">
+          <iframe
+            src="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2FMyMahalasa&tabs=timeline&width=400&height=500&small_header=false&adapt_container_width=true&hide_cover=false&show_facepile=true"
+            width="100%"
+            height="500"
+            style={{ border: "none", overflow: "hidden" }}
+            scrolling="no"
+            frameBorder="0"
+            allow="encrypted-media; clipboard-write; picture-in-picture; web-share"
+          ></iframe>
+
+          {/* View on Facebook Button */}
+          <a
+            href="https://www.facebook.com/MyMahalasa/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="mt-4 block text-center bg-blue-600 hover:bg-blue-700 text-white font-semibold px-4 py-2 rounded-lg"
+          >
+            View on Facebook
+          </a>
         </div>
-        <div className="bg-yellow-100 p-6">
-          {/* Facebook widget would go here */}
-          <div className="h-64 bg-gray-200 flex items-center justify-center text-gray-500">
-            Facebook Feed
-          </div>
-        </div>
+      </div>
+          <div className="mt-4 text-center">
+        <a
+          href="https://whatsapp.com/channel/0029VahupPtLCoX2NqbAA00G"
+          target="_blank"
+          rel="noopener noreferrer"
+          className="inline-block bg-green-600 hover:bg-green-700 text-white font-semibold px-4 py-2 rounded-lg"
+        >
+          Join our WhatsApp Channel
+        </a>
       </div>
     </div>
   );

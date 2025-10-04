@@ -59,7 +59,7 @@ body {
 .content-wrapper {
   background-color: #f5f2dc;
   width: 100%;
-  max-width: 1250px;
+  max-width: 1523px;
   min-width: 320px; /* Changed from 800px */
   margin: 0 auto;
     color: #006633;
@@ -91,7 +91,7 @@ body {
   display: flex;
   gap: 20px;
   padding: 20px;
-  max-width: 1250px;
+  max-width: 1523px;
   margin: 0 auto;
 }
 
@@ -130,6 +130,8 @@ body {
     flex-direction: column;
     padding: 10px;
     gap: 20px;
+     display: flex;
+    align-items: center;
   }
   
   .left-sidebar,
@@ -159,6 +161,8 @@ body {
   .main-content {
     padding: 8px;
     gap: 15px;
+    display: flex;
+    align-items: center;
   }
   
   .center-content {

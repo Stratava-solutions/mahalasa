@@ -125,8 +125,8 @@ export default function Chronicles() {
                 <Image
                   src="/small_gold_god.png"
                   alt="Shri Mahalasa Narayani"
-                  width={60}
-                  height={80}
+                  width={100}
+                  height={100}
                   className="rounded"
                 />
               </div>

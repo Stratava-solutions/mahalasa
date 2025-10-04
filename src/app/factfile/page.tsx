@@ -205,8 +205,8 @@ export default function Factfile() {
                   <Image
                     src="/god.jpg"
                     alt="Shri Mahalasa Narayani"
-                    width={60}
-                    height={80}
+                    width={100}
+                    height={100}
                     className="rounded"
                   />
                 </div>
@@ -245,8 +245,8 @@ export default function Factfile() {
                     <Image
                       src="/devotees.jpg"
                       alt="dev"
-                      width={300}
-                      height={300}
+                      width={400}
+                      height={400}
                       className="rounded"
                     />
                     <div className="text-center">
@@ -369,8 +369,8 @@ export default function Factfile() {
                     <Image
                       src="/suresh_pai.jpg"
                       alt="pai"
-                      width={150}
-                      height={150}
+                      width={200}
+                      height={200}
                       className="rounded"
                     />
                     <div className="text-center pt-4">
