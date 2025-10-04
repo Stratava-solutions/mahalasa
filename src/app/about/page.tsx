@@ -1,7 +1,7 @@
 import Image from "next/image";
 
 /**
- * come on now
+ * come on now once again
  */
 
 export default function AboutPage() {
