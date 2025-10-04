@@ -4,7 +4,13 @@ import { useState, useRef, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
-const tabs = [
+interface Tab {
+  name: string;
+  path: string;
+  dropdown?: Tab[];
+}
+
+const tabs: Tab[] = [
   { name: "HOME", path: "/" },
   { name: "CHRONICLES", path: "/chronicles" },
   { name: "FACTFILE", path: "/factfile" },
@@ -13,7 +19,42 @@ const tabs = [
   { name: "PANCHANGAM", path: "/panchangam" },
   { name: "INVITATION", path: "/invitation" },
   { name: "SEVA", path: "/seva" },
-  { name: "TEMPLES", path: "/temples" },
+  {
+    name: "TEMPLES",
+    path: "/temples",
+    dropdown: [
+      {
+        name: "Goa",
+        path: "#",
+        dropdown: [
+          { name: "MARDOL", path: "https://web.archive.org/web/20241009065525/http://mardol.mahalasa.org/" },
+          { name: "VERNA", path: "https://web.archive.org/web/20241009065525/http://verna.mahalasa.org/" },
+        ],
+      },
+      {
+        name: "Karnataka",
+        path: "#",
+        dropdown: [
+          { name: "BASRUR", path: "https://web.archive.org/web/20241009065525/http://basrur.mahalasa.org/" },
+          { name: "HARIKHANDIGE", path: "https://web.archive.org/web/20241009065525/http://harikhandige.mahalasa.org/" },
+          { name: "KONCHADY", path: "https://web.archive.org/web/20241009065525/http://konchady.mahalasa.org/" },
+          { name: "KUMTA", path: "https://web.archive.org/web/20241009065525/http://kumta.mahalasa.org/" },
+          { name: "MADANGERI", path: "https://web.archive.org/web/20241009065525/http://madangeri.mahalasa.org/" },
+          { name: "MOODBIDRI", path: "https://web.archive.org/web/20241009065525/http://moodbidri.mahalasa.org/" },
+          { name: "MUDGERI", path: "https://web.archive.org/web/20241009065525/http://www.shrimahalasanarayani.org/" },
+          { name: "SHIRVA", path: "https://web.archive.org/web/20241009065525/http://shirva.mahalasa.org/" },
+        ],
+      },
+      {
+        name: "Maharashtra",
+        path: "#",
+        dropdown: [
+          { name: "NIVASE", path: "https://web.archive.org/web/20241009065525/https://www.mahalasa.org/temples/maharashtra/nevase/" },
+          { name: "OTHER", path: "#" },
+        ],
+      },
+    ],
+  },
   {
     name: "CHANNELS",
     path: "/channels",
@@ -23,10 +64,7 @@ const tabs = [
       { name: "Video Gallery", path: "/channels/video-gallery" },
     ],
   },
-  {
-    name: "ABOUT",
-    path: "/about",
-  },
+  { name: "ABOUT", path: "/about" },
   {
     name: "CONNECT",
     path: "/contact",
@@ -41,96 +79,113 @@ const tabs = [
 export default function Navbar() {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
+  const [nestedDropdown, setNestedDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const dropdownRefs = useRef<{ [key: string]: HTMLLIElement | null }>({});
-  const timeoutRef = useRef<any>(null);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
+  const nestedTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close dropdown when clicking outside
+  // Close dropdown on click outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      if (openDropdown) {
-        const dropdownElement = dropdownRefs.current[openDropdown];
-        if (dropdownElement && !dropdownElement.contains(event.target as Node)) {
-          setOpenDropdown(null);
-        }
+      const target = event.target as HTMLElement;
+      if (!target.closest(".dropdown-container")) {
+        setOpenDropdown(null);
+        setNestedDropdown(null);
       }
     };
-
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
-  }, [openDropdown]);
+  }, []);
 
-  const handleMouseEnter = (tabName: string) => {
+  const handleMouseEnter = (name: string) => {
     if (window.innerWidth >= 768) {
-      // Clear any pending timeout
-      if (timeoutRef.current) {
-        clearTimeout(timeoutRef.current);
-      }
-      setOpenDropdown(tabName);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+      setOpenDropdown(name);
     }
   };
 
   const handleMouseLeave = () => {
     if (window.innerWidth >= 768) {
-      // Add a small delay before closing to allow moving to dropdown
       timeoutRef.current = setTimeout(() => {
         setOpenDropdown(null);
-      }, 150);
+        setNestedDropdown(null);
+      }, 200);
     }
   };
 
-  const handleDropdownMouseEnter = () => {
-    // Cancel the close timeout when mouse enters dropdown
-    if (timeoutRef.current) {
-      clearTimeout(timeoutRef.current);
-    }
-  };
-
-  const handleDropdownMouseLeave = () => {
-    // Close dropdown when mouse leaves
+  const handleNestedMouseEnter = (name: string) => {
     if (window.innerWidth >= 768) {
-      setOpenDropdown(null);
+      if (nestedTimeoutRef.current) clearTimeout(nestedTimeoutRef.current);
+      setNestedDropdown(name);
     }
   };
 
-  const toggleMobileDropdown = (tabName: string) => {
-    setOpenDropdown(openDropdown === tabName ? null : tabName);
+  const handleNestedMouseLeave = () => {
+    if (window.innerWidth >= 768) {
+      nestedTimeoutRef.current = setTimeout(() => {
+        setNestedDropdown(null);
+      }, 200);
+    }
   };
 
-  const closeMobileMenu = () => {
-    setIsMobileMenuOpen(false);
-    setOpenDropdown(null);
+  const toggleMobileDropdown = (name: string) => {
+    setOpenDropdown(openDropdown === name ? null : name);
   };
+
+  // Recursive Dropdown component
+  const Dropdown = ({ items, isNested = false }: { items: Tab[]; isNested?: boolean }) => (
+    <ul 
+      className={`absolute bg-white border border-gray-200 rounded-md shadow-lg min-w-[180px] z-50 dropdown-container ${
+        isNested ? 'top-0 left-full ml-1' : 'top-full left-0 mt-1'
+      }`}
+      onMouseEnter={() => {
+        if (timeoutRef.current) clearTimeout(timeoutRef.current);
+        if (nestedTimeoutRef.current) clearTimeout(nestedTimeoutRef.current);
+      }}
+      onMouseLeave={isNested ? handleNestedMouseLeave : handleMouseLeave}
+    >
+      {items.map((item) => (
+        <li
+          key={item.name}
+          className="relative"
+          onMouseEnter={() => item.dropdown && handleNestedMouseEnter(item.name)}
+        >
+          <Link
+            href={item.path}
+            target="_blank"
+            className={`block px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
+              pathname === item.path ? "bg-red-50 text-red-600 font-medium" : ""
+            }`}
+            onClick={() => {
+              setOpenDropdown(null);
+              setNestedDropdown(null);
+            }}
+          >
+            {item.name} {item.dropdown && <span className="ml-1 inline-block">▸</span>}
+          </Link>
+
+          {item.dropdown && nestedDropdown === item.name && (
+            <Dropdown items={item.dropdown} isNested={true} />
+          )}
+        </li>
+      ))}
+    </ul>
+  );
 
   return (
     <nav className="bg-orange-50 border-b border-orange-200 w-full relative z-50">
-      {/* Mobile Menu Header */}
+      {/* Mobile Header */}
       <div className="md:hidden flex justify-between items-center px-4 py-3">
         <span className="font-bold text-red-600">Mahalasa</span>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 rounded-md text-gray-700 hover:bg-orange-100 transition-colors"
         >
-          <svg
-            className="w-6 h-6"
-            fill="none"
-            stroke="currentColor"
-            viewBox="0 0 24 24"
-          >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             {isMobileMenuOpen ? (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
             ) : (
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
             )}
           </svg>
         </button>
@@ -142,10 +197,7 @@ export default function Navbar() {
           {tabs.map((tab) => (
             <li
               key={tab.name}
-              className="relative"
-              ref={(el) => {
-                dropdownRefs.current[tab.name] = el;
-              }}
+              className="relative dropdown-container"
               onMouseEnter={() => tab.dropdown && handleMouseEnter(tab.name)}
               onMouseLeave={handleMouseLeave}
             >
@@ -153,52 +205,15 @@ export default function Navbar() {
                 href={tab.path}
                 className={`px-4 py-2 rounded-md text-sm font-medium transition-colors inline-block ${
                   pathname === tab.path ||
-                  (tab.dropdown &&
-                    tab.dropdown.some((item) => pathname === item.path))
+                  (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
                     ? "bg-red-500 text-white"
                     : "text-gray-700 hover:bg-orange-100"
                 }`}
               >
-                {tab.name}
-                {tab.dropdown && (
-                  <svg
-                    className="inline-block ml-1 w-3 h-3"
-                    fill="currentColor"
-                    viewBox="0 0 20 20"
-                  >
-                    <path
-                      fillRule="evenodd"
-                      d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
-                      clipRule="evenodd"
-                    />
-                  </svg>
-                )}
+                {tab.name} {tab.dropdown && <span className="ml-1 inline-block">▾</span>}
               </Link>
 
-              {/* Dropdown */}
-              {tab.dropdown && openDropdown === tab.name && (
-                <ul
-                  className="absolute top-full left-0 mt-1 bg-white border border-gray-200 rounded-md shadow-lg min-w-[180px] z-50"
-                  onMouseEnter={handleDropdownMouseEnter}
-                  onMouseLeave={handleDropdownMouseLeave}
-                >
-                  {tab.dropdown.map((item) => (
-                    <li key={item.name}>
-                      <Link
-                        href={item.path}
-                        className={`block px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
-                          pathname === item.path
-                            ? "bg-red-50 text-red-600 font-medium"
-                            : ""
-                        }`}
-                        onClick={() => setOpenDropdown(null)}
-                      >
-                        {item.name}
-                      </Link>
-                    </li>
-                  ))}
-                </ul>
-              )}
+              {tab.dropdown && openDropdown === tab.name && <Dropdown items={tab.dropdown} />}
             </li>
           ))}
         </ul>
@@ -208,15 +223,19 @@ export default function Navbar() {
       {isMobileMenuOpen && (
         <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-orange-200 shadow-lg z-50 max-h-[80vh] overflow-y-auto">
           {tabs.map((tab) => (
-            <div key={tab.name}>
+            <div key={tab.name} className="border-b border-orange-100">
               <div className="flex justify-between items-center">
                 <Link
                   href={tab.path}
-                  onClick={closeMobileMenu}
+                  onClick={() => {
+                    if (!tab.dropdown) {
+                      setIsMobileMenuOpen(false);
+                      setOpenDropdown(null);
+                    }
+                  }}
                   className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
                     pathname === tab.path ||
-                    (tab.dropdown &&
-                      tab.dropdown.some((item) => pathname === item.path))
+                    (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
                       ? "bg-red-500 text-white"
                       : "text-gray-700 hover:bg-orange-100"
                   }`}
@@ -245,21 +264,16 @@ export default function Navbar() {
                 )}
               </div>
 
+              {/* Mobile nested dropdown */}
               {tab.dropdown && openDropdown === tab.name && (
                 <div className="bg-gray-50 border-t">
                   {tab.dropdown.map((item) => (
-                    <Link
-                      key={item.name}
-                      href={item.path}
-                      onClick={closeMobileMenu}
-                      className={`block px-8 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
-                        pathname === item.path
-                          ? "bg-red-50 text-red-600 font-medium border-l-4 border-red-500"
-                          : ""
-                      }`}
-                    >
-                      {item.name}
-                    </Link>
+                    <MobileDropdownItem 
+                      key={item.name} 
+                      item={item} 
+                      pathname={pathname}
+                      onClose={() => setIsMobileMenuOpen(false)}
+                    />
                   ))}
                 </div>
               )}
@@ -270,3 +284,69 @@ export default function Navbar() {
     </nav>
   );
 }
+
+// Recursive Mobile Dropdown for nested items
+const MobileDropdownItem = ({
+  item,
+  pathname,
+  level = 1,
+  onClose,
+}: {
+  item: Tab;
+  pathname: string;
+  level?: number;
+  onClose: () => void;
+}) => {
+  const [open, setOpen] = useState(false);
+
+  return (
+    <div className={`border-b border-gray-100`} style={{ paddingLeft: `${level * 16}px` }}>
+      <div className="flex justify-between items-center">
+        <Link
+          href={item.path}
+          className={`flex-1 px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
+            pathname === item.path ? "bg-red-50 text-red-600 font-medium" : ""
+          }`}
+          onClick={() => {
+            if (!item.dropdown) {
+              onClose();
+            }
+          }}
+        >
+          {item.name}
+        </Link>
+        {item.dropdown && (
+          <button
+            onClick={() => setOpen(!open)}
+            className="px-3 py-2 text-gray-600 hover:bg-orange-100 rounded"
+          >
+            <svg
+              className={`w-3 h-3 transform transition-transform ${open ? "rotate-180" : ""}`}
+              fill="currentColor"
+              viewBox="0 0 20 20"
+            >
+              <path
+                fillRule="evenodd"
+                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 111.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                clipRule="evenodd"
+              />
+            </svg>
+          </button>
+        )}
+      </div>
+      {item.dropdown && open && (
+        <div className="bg-gray-50">
+          {item.dropdown.map((sub) => (
+            <MobileDropdownItem 
+              key={sub.name} 
+              item={sub} 
+              pathname={pathname} 
+              level={level + 1}
+              onClose={onClose}
+            />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+};

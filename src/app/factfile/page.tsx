@@ -21,9 +21,7 @@ export default function Factfile() {
         <div className="text-primary p-6 rounded-lg shadow-sm mb-6">
           {/* Kumkum Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4 text-primary" >
-              Kumkum
-            </h2>
+            <h2 className="text-xl font-bold mb-4 text-primary">Kumkum</h2>
             <div className="flex items-start bg-inherit mb-4">
               <div className="mr-6">
                 <Image
@@ -34,10 +32,7 @@ export default function Factfile() {
                   className="rounded"
                 />
               </div>
-              <div
-                className="flex-1 text-primary leading-relaxed"
-                
-              >
+              <div className="flex-1 text-primary leading-relaxed">
                 <p className="mb-4 text-primary">
                   You can give cash, gold, fruits and flowers as offerings to
                   Shri Mahalasa Narayani. But She can be pleased with a devotee
@@ -61,13 +56,8 @@ export default function Factfile() {
 
           {/* The Holy Thread Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4">
-              The Holy Thread
-            </h2>
-            <p
-              className="leading-relaxed text-primary italic mb-4"
-
-            >
+            <h2 className="text-xl font-bold mb-4">The Holy Thread</h2>
+            <p className="leading-relaxed text-primary italic mb-4">
               <em>
                 Shri Mahalasa wears a Janmaue or Yadnopavita or the Holy Thread?
                 This is rare for a Goddess!
@@ -82,10 +72,8 @@ export default function Factfile() {
 
           {/* Jagruk Devata Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" >
-              Jagruk Devata
-            </h2>
-            <p className="leading-relaxed mb-4" >
+            <h2 className="text-xl font-bold mb-4">Jagruk Devata</h2>
+            <p className="leading-relaxed mb-4">
               Shri Mahalasa Narayani is supposed to be a very Jagruk Daivat
               (Vigilant Deity) even in these modern times. Prayers to her, if
               performed from the heart, seldom go unanswered. Ever since this
@@ -101,13 +89,8 @@ export default function Factfile() {
 
           {/* Profound Impact Section */}
           <div className="mb-8 text-primary">
-            <h2 className="text-xl font-bold mb-4">
-              Profound impact
-            </h2>
-            <p
-              className="leading-relaxed italic mb-4"
-            
-            >
+            <h2 className="text-xl font-bold mb-4">Profound impact</h2>
+            <p className="leading-relaxed italic mb-4">
               <em>
                 Many of the prayers, stuthis and stotras devoted to Her are not
                 only pleasing to listen to, but also have a profound impact on
@@ -124,9 +107,7 @@ export default function Factfile() {
 
           {/* Shri Mahalasa's Charitra Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" >
-              Shri Mahalasa's Charitra
-            </h2>
+            <h2 className="text-xl font-bold mb-4">Shri Mahalasa's Charitra</h2>
             <div className="flex items-start mb-4">
               <div className="mr-6 flex-shrink-0">
                 <div
@@ -147,9 +128,7 @@ export default function Factfile() {
                   </div>
                 </div>
               </div>
-              <div
-                className="flex-1 leading-relaxed"
-              >
+              <div className="flex-1 leading-relaxed">
                 <p className="mb-4">
                   The Charitra of Goddess Mahalasa Narayani, authored by His
                   Holiness Guruji Shri Suresh J. Pai (of Shri Mahalasa Narayani
@@ -167,7 +146,7 @@ export default function Factfile() {
                 </p>
               </div>
             </div>
-            <p className="leading-relaxed mb-4 text-primary" >
+            <p className="leading-relaxed mb-4 text-primary">
               The Charitra is available in English, Kannada and Marathi
               versions. To know more about the Charitra and the correct way of
               reading it,{" "}
@@ -182,12 +161,8 @@ export default function Factfile() {
 
           {/* The Kavacham Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4">
-              The Kavacham
-            </h2>
-            <p
-              className="leading-relaxed italic mb-4"
-            >
+            <h2 className="text-xl font-bold mb-4">The Kavacham</h2>
+            <p className="leading-relaxed italic mb-4">
               <em>
                 Among the many stotras dedicated to Shri Mahalasa, the most
                 interesting is the Kavacham, which means shield or armour. The
@@ -210,9 +185,7 @@ export default function Factfile() {
                     className="rounded"
                   />
                 </div>
-                <div
-                  className="text-md leading-relaxed"
-                >
+                <div className="text-md leading-relaxed">
                   <p>
                     <em>
                       Then there are those who keep printed versions of the
@@ -232,7 +205,7 @@ export default function Factfile() {
 
           {/* Sunday, Her day | Palakhi Seva Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" >
+            <h2 className="text-xl font-bold mb-4">
               Sunday, Her day | Palakhi Seva
             </h2>
             <div className="flex items-start mb-4">
@@ -256,9 +229,7 @@ export default function Factfile() {
                   </div>
                 </div>
               </div>
-              <div
-                className="flex-1 leading-relaxed"
-              >
+              <div className="flex-1 leading-relaxed">
                 <p className="mb-4">
                   While every day is important, Sundays hold a special
                   significance. Sunday is supposed to be Shri Mahalasa's day!
@@ -288,13 +259,8 @@ export default function Factfile() {
 
           {/* Dhool Bhet Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" >
-              Dhool Bhet
-            </h2>
-            <p
-              className="leading-relaxed italic mb-4"
-              
-            >
+            <h2 className="text-xl font-bold mb-4">Dhool Bhet</h2>
+            <p className="leading-relaxed italic mb-4">
               <em>
                 While our prayers and poojas are offered only after taking a
                 bath, when we visit the temple after a long and tiring journey,
@@ -315,10 +281,8 @@ export default function Factfile() {
 
           {/* Navaratri Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" >
-              Navaratri
-            </h2>
-            <p className="leading-relaxed mb-4" >
+            <h2 className="text-xl font-bold mb-4">Navaratri</h2>
+            <p className="leading-relaxed mb-4">
               The most important days of Utsav (festival) are during Navaratri
               which falls during the first fortnight of Ashwin (Ashweeja). This
               is a time when all Her temples are packed with devotees flocking
@@ -335,17 +299,20 @@ export default function Factfile() {
 
           {/* Spirituality for all Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4" >
-              Spirituality for all
-            </h2>
+            <h2 className="text-xl font-bold mb-4">Spirituality for all</h2>
             <div className="flex items-start mb-4">
-              <div
-                className="flex-1 leading-relaxed"
-              >
+              <div className="flex-1 leading-relaxed">
                 <p className="mb-4">
                   Shri Mahalasa Narayani's temple at Harikhandige (
                   <span className="text-blue-600 cursor-pointer">
-                    click here to visit website
+                    <a
+                      target="_blank"
+                      href="https://web.archive.org/web/20250206121021/https://harikhandige.mahalasa.org/"
+                      className="text-blue-600 underline"
+                    >
+                      click here
+                    </a>{" "}
+                    to visit website
                   </span>
                   ) is unique in many ways. Apart from its location among
                   splendorous hills and forests, She is celebrated here in the
@@ -389,10 +356,8 @@ export default function Factfile() {
 
           {/* Direct participation Section */}
           <div className="mb-8">
-            <h2 className="text-xl font-bold mb-4">
-              Direct participation
-            </h2>
-            <p className="leading-relaxed mb-4" >
+            <h2 className="text-xl font-bold mb-4">Direct participation</h2>
+            <p className="leading-relaxed mb-4">
               It is amazing that Shri Mahalasa Narayani Devi Kshetra,
               Harikhandige, is one spiritual centre where the direct
               participation of devotees — along with vaidiks and priests, or
@@ -414,20 +379,20 @@ export default function Factfile() {
             <h2 className="text-xl font-bold mb-4">
               The four-and-a-half gotras
             </h2>
-            <p className="leading-relaxed mb-4" >
+            <p className="leading-relaxed mb-4">
               Shri Mahalasa's Kulavis and Mahajans belong to the following "four
               and a half" Gotras (a form of lineage that is unique to a
               particular family among Hindus. A boy and girl from the same Gotra
               cannot marry, because they are considered to be siblings):
             </p>
-            <div className="ml-6 mb-4" >
+            <div className="ml-6 mb-4">
               <p className="mb-2">a. Kaunsha</p>
               <p className="mb-2">b. Bharadwaj</p>
               <p className="mb-2">c. Atri</p>
               <p className="mb-2">d. Gargeya</p>
               <p className="mb-2">e. Vatsa</p>
             </div>
-            <p className="leading-relaxed mb-4" >
+            <p className="leading-relaxed mb-4">
               While those from the Kaunsha Gotra, whenever they visit the
               temple, are supposed to worship Shri Mahalasa and then their Kula
               Purush, i.e., Simha Purush, devotees belonging to the other Gotras
@@ -435,10 +400,7 @@ export default function Factfile() {
               to Shri Mahalasa and their respective Kula Purush and Shri Gram
               Purush!
             </p>
-            <p
-              className="leading-relaxed text-sm mb-4"
-              
-            >
+            <p className="leading-relaxed text-sm mb-4">
               (You may note that there are five Gotras mentioned but the intro
               said "four and a half". Vatsa Gotris, for reasons not known, are
               considered to be half Gotris.)
@@ -455,7 +417,7 @@ export default function Factfile() {
             <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
               Her Kulavis
             </h2>
-            <p className="leading-relaxed mb-4" >
+            <p className="leading-relaxed mb-4">
               <em>
                 Shri Mahalasa is worshipped by a large section of the Hindu
                 society. Her Kulavis are mainly Gowda Saraswat Brahmins. Other
@@ -478,12 +440,12 @@ export default function Factfile() {
             <h2 className="text-xl font-bold mb-4" style={{ color: "#006633" }}>
               Parashurama's instructions
             </h2>
-            <p className="leading-relaxed mb-4" >
+            <p className="leading-relaxed mb-4">
               Lord Parshurama's instructions to the devotees of Shri Mahalasa
               is: She is to be worshipped during the nine parts of the day,
               namely,
             </p>
-            <div className="ml-6 mb-4 space-y-1" >
+            <div className="ml-6 mb-4 space-y-1">
               <p>Pratahkal as Adhishakti,</p>
               <p>Purvanha as Mahamaya,</p>
               <p>Madhyanha as Mulaprakruti,</p>
@@ -498,7 +460,7 @@ export default function Factfile() {
             <p className="font-semibold mb-4" style={{ color: "#006633" }}>
               She is to be worshipped by reciting 24 names:
             </p>
-            <p className="leading-relaxed mb-4" >
+            <p className="leading-relaxed mb-4">
               <strong>Durga, Bhadrakali</strong>, Vijaya, Vaishnavi, Kumuda,
               Dandika, Krishna, Madhavi, Kanyaka, Maya, Narayani, Shanta,
               Sharada, Ambika, Katyayani, Baldurga, Maha Yogini, Adhishwari, Yog
@@ -530,10 +492,7 @@ export default function Factfile() {
                   <div className="w-12 h-0.5 bg-blue-400"></div>
                 </div>
 
-                <p
-                  className="text-md leading-relaxed italic mb-4"
-                  
-                >
+                <p className="text-md leading-relaxed italic mb-4">
                   <em>
                     Blessed be the devotees of Mother Mahalasa with peace and
                     happiness in their spiritual and material life and let all
