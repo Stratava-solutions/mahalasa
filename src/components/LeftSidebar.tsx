@@ -12,7 +12,7 @@ export default function LeftSidebar() {
       time: "at 7:00 am",
     },
     {
-      date: "January 26, 2025",
+      date: "Every Thursday",
       badge: "SATSANG",
       badgeColor: "bg-green-500",
       image: "/suresh.jpg",
@@ -51,13 +51,12 @@ export default function LeftSidebar() {
           {/* Date */}
           <div className="flex items-center mb-4">
             <span className="inline-block w-4 h-4 bg-gray-400 mr-2"></span>
-            <span className="text-gray-700 font-semibold">{event.date}</span>
+            <span className="text-gray-700 font-semibold whitespace-nowrap ">{event.date}</span>
           </div>
 
           <div className="ml-6">
             {/* Badge */}
             <div className="mb-4">
-              <span className="inline-block w-4 h-4 bg-gray-400 mr-2"></span>
               <span
                 className={`${event.badgeColor} text-white px-3 py-1 font-bold inline-block`}
               >

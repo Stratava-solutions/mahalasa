@@ -9,7 +9,7 @@ export default function Seva() {
       }}
     >
       {/* Main Content */}
-      <div className="container text-primary mx-auto px-4 py-6 max-w-4xl">
+      <div className="container text-primary mx-auto px-4 py-6 max-w-6xl">
         {/* Title */}
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold mb-4">

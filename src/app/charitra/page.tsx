@@ -6,7 +6,7 @@ export default function Charitra() {
       className="min-h-screen text-primary"
     >
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-4xl text-primary">
+      <div className="container mx-auto px-4 py-6 max-w-6xl text-primary">
         {/* Title */}
         <div className="text-center mb-6">
           <h1 className="text-2xl font-bold mb-4">

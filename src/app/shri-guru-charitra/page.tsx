@@ -4,7 +4,7 @@ export default function ShriGuruCharitra() {
   return (
     <div className="min-h-screen">
       {/* Main Content */}
-      <div className="container text-primary mx-auto px-4 py-6 max-w-4xl">
+      <div className="container text-primary mx-auto px-4 py-6 max-w-6xl">
         
         {/* Title and Main Image */}
         <div className="text-center mb-6">
