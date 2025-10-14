@@ -2,7 +2,7 @@ import Image from "next/image";
 
 export default function ShriGuruCharitra() {
   return (
-    <div className="min-h-screen" style={{background: 'linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100%)'}}>
+    <div className="min-h-screen">
       {/* Main Content */}
       <div className="container text-primary mx-auto px-4 py-6 max-w-4xl">
         
@@ -32,7 +32,7 @@ export default function ShriGuruCharitra() {
               height={500}
               className="mx-auto rounded-lg shadow-md"
             />
-            <p className="text-sm mt-2 text-gray-600">SHRI MAHAALASAA NAARAAYANI DEVI KSHETRA, HARIKHANDIGE</p>
+            <p className="text-md mt-2 text-gray-600">SHRI MAHAALASAA NAARAAYANI DEVI KSHETRA, HARIKHANDIGE</p>
           </div>
 
           {/* Main Content Text */}

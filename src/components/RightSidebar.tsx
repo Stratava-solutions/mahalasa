@@ -8,7 +8,7 @@ export default function RightSidebar() {
   ];
 
   return (
-    <div className="bg-yellow-100 p-6 w-full sm:w-64 md:w-96 lg:w-80 xl:w-96">
+    <div className="bg-bgDefault p-6 w-full sm:w-64 md:w-64 lg:w-64 xl:w-64">
       {/* NEWS Section */}
       <div className="mb-6">
         <div className="bg-green-800 text-white px-6 py-3">
@@ -29,7 +29,7 @@ export default function RightSidebar() {
       {/* INFORMATION Section */}
       <div className="mb-6">
         <div className="bg-green-800 text-white px-6 py-3">
-          <h2 className="text-3xl font-bold">INFORMATION</h2>
+          <h2 className="text-xl font-bold">INFORMATION</h2>
         </div>
         <div className="bg-yellow-100 p-6">
           <ul className="space-y-3">

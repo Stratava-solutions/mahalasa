@@ -7,7 +7,7 @@ export default function Home() {
       <HeroSection />
 
       {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-4xl">
+      <div className="container mx-auto px-4 py-6 max-w-6xl">
         {/* Title */}
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-primary mb-4">
@@ -16,18 +16,63 @@ export default function Home() {
         </div>
 
         {/* Main Goddess Image */}
-        <div className="text-center mb-6">
-          <div className="inline-block">
+        <div className="font-bold text-primary mb-10 leading-relaxed md:flex md:items-start md:gap-6">
+          {/* Image section */}
+          <div className="md:w-[70%] w-full">
             <Image
               src="/god.jpg"
               alt="Shri Mahalasa Narayani"
               width={410}
               height={551}
-              className="mx-auto border-4 border-yellow-600 rounded-lg shadow-lg"
+              className="w-full h-auto border-4 border-yellow-600 rounded-lg shadow-lg"
               priority
             />
-            <p className="text-sm text-primary mt-2 italic">
+            <p className="text-sm text-primary mt-2 italic text-center">
               Shri Mahalasa Narayani
+            </p>
+          </div>
+
+          {/* Text section */}
+          <div className="md:w-[30%] w-full mt-4 md:mt-0 text-left font-semibold">
+            <p className="mb-4">
+              <strong className="text-primary">SHRI MAHALASA NARAYANI</strong>{" "}
+              is the powerful <strong>Kuladevata</strong> (family deity) of many
+              Hindus, especially in western and southern India.
+            </p>
+
+            <p className="mb-4">
+              <strong className="text-primary">"Mahalasa"</strong> is another
+              name for the Supreme Lord Vishnu's famous <strong>avatar</strong>{" "}
+              (incarnation):{" "}
+              <strong className="text-primary">Mohini, the Enchantress</strong>.
+            </p>
+
+            <p className="mb-4">
+              Temples dedicated to the worship of Shri Mahalasa Narayani are
+              present in Maharashtra, Goa, Karnataka, Kerala, and many other
+              places.
+            </p>
+
+            <p className="mb-4">
+              <strong className="text-primary">SHRI MAHALASA NARAYANI</strong>{" "}
+              is the powerful <strong>Kuladevata</strong> of many Hindus,
+              especially in western and southern India.
+            </p>
+            <p className="mb-4">
+              <strong className="text-primary">SHRI MAHALASA NARAYANI</strong>{" "}
+              is the powerful <strong>Kuladevata</strong> (family deity) of many
+              Hindus, especially in western and southern India.
+            </p>
+            <p className="mb-4">
+              <strong className="text-primary">"Mahalasa"</strong> is another
+              name for the Supreme Lord Vishnu's famous <strong>avatar</strong>{" "}
+              (incarnation):{" "}
+              <strong className="text-primary">Mohini, the Enchantress</strong>.
+            </p>
+            <p className="mb-4">
+              <strong className="text-primary">SHRI MAHALASA NARAYANI</strong>{" "}
+              is the powerful <strong>Kuladevata</strong> (family deity) of many
+              Hindus, especially in western and southern India.
             </p>
           </div>
         </div>

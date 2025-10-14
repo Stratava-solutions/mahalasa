@@ -4,9 +4,7 @@ export default function Factfile() {
   return (
     <div
       className="min-h-screen text-primary"
-      style={{
-        background: "linear-gradient(135deg, #f5f2d8 0%, #ede8c8 100%)",
-      }}
+
     >
       {/* Main Content */}
       <div className="container mx-auto px-4 py-6 max-w-4xl text-primary">

@@ -84,7 +84,7 @@ export default function Navbar() {
   const timeoutRef = useRef<NodeJS.Timeout | null>(null);
   const nestedTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close dropdown on click outside
+  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as HTMLElement;
@@ -132,11 +132,11 @@ export default function Navbar() {
     setOpenDropdown(openDropdown === name ? null : name);
   };
 
-  // Recursive Dropdown component
+  // Recursive Dropdown
   const Dropdown = ({ items, isNested = false }: { items: Tab[]; isNested?: boolean }) => (
-    <ul 
-      className={`absolute bg-white border border-gray-200 rounded-md shadow-lg min-w-[180px] z-50 dropdown-container ${
-        isNested ? 'top-0 left-full ml-1' : 'top-full left-0 mt-1'
+    <ul
+      className={`absolute bg-white border border-gray-200 rounded-lg shadow-xl min-w-[190px] z-50 dropdown-container backdrop-blur-sm transition-all duration-200 ${
+        isNested ? "top-0 left-full ml-2" : "top-full left-0 mt-2"
       }`}
       onMouseEnter={() => {
         if (timeoutRef.current) clearTimeout(timeoutRef.current);
@@ -147,23 +147,22 @@ export default function Navbar() {
       {items.map((item) => (
         <li
           key={item.name}
-          className="relative"
+          className="relative group"
           onMouseEnter={() => item.dropdown && handleNestedMouseEnter(item.name)}
         >
           <Link
             href={item.path}
-            target="_blank"
-            className={`block px-4 py-2 text-sm text-gray-700 hover:bg-orange-100 transition-colors ${
-              pathname === item.path ? "bg-red-50 text-red-600 font-medium" : ""
+            target={item.path.startsWith("http") ? "_blank" : "_self"}
+            className={`block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-orange-100 hover:text-red-600 transition-all duration-150 rounded-md ${
+              pathname === item.path ? "bg-red-100 text-red-600" : ""
             }`}
             onClick={() => {
               setOpenDropdown(null);
               setNestedDropdown(null);
             }}
           >
-            {item.name} {item.dropdown && <span className="ml-1 inline-block">▸</span>}
+            {item.name} {item.dropdown && <span className="ml-1">▸</span>}
           </Link>
-
           {item.dropdown && nestedDropdown === item.name && (
             <Dropdown items={item.dropdown} isNested={true} />
           )}
@@ -173,10 +172,10 @@ export default function Navbar() {
   );
 
   return (
-    <nav className="bg-orange-50 border-b border-orange-200 w-full relative z-50">
+    <nav className="bg-gradient-to-r from-orange-50 to-red-50 border-b border-orange-200 shadow-sm w-full relative z-50">
       {/* Mobile Header */}
       <div className="md:hidden flex justify-between items-center px-4 py-3">
-        <span className="font-bold text-red-600">Mahalasa</span>
+        <span className="font-extrabold text-red-700 text-lg">Mahalasa</span>
         <button
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           className="p-2 rounded-md text-gray-700 hover:bg-orange-100 transition-colors"
@@ -193,7 +192,7 @@ export default function Navbar() {
 
       {/* Desktop Menu */}
       <div className="hidden md:block">
-        <ul className="flex flex-wrap justify-center gap-2 py-2">
+        <ul className="flex flex-wrap justify-center gap-1 py-2">
           {tabs.map((tab) => (
             <li
               key={tab.name}
@@ -203,11 +202,11 @@ export default function Navbar() {
             >
               <Link
                 href={tab.path}
-                className={`px-4 py-2 rounded-md text-sm font-medium transition-colors inline-block ${
+                className={`px-4 py-2 rounded-md text-sm font-semibold tracking-wide transition-all duration-200 ${
                   pathname === tab.path ||
                   (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
-                    ? "bg-red-500 text-white"
-                    : "text-gray-700 hover:bg-orange-100"
+                    ? "bg-red-500 text-white shadow-md"
+                    : "text-gray-700 hover:bg-orange-100 hover:text-red-700"
                 }`}
               >
                 {tab.name} {tab.dropdown && <span className="ml-1 inline-block">▾</span>}
@@ -221,7 +220,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isMobileMenuOpen && (
-        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-orange-200 shadow-lg z-50 max-h-[80vh] overflow-y-auto">
+        <div className="md:hidden absolute top-full left-0 w-full bg-white border-t border-orange-200 shadow-lg z-50 max-h-[80vh] overflow-y-auto rounded-b-lg">
           {tabs.map((tab) => (
             <div key={tab.name} className="border-b border-orange-100">
               <div className="flex justify-between items-center">
@@ -233,7 +232,7 @@ export default function Navbar() {
                       setOpenDropdown(null);
                     }
                   }}
-                  className={`flex-1 px-4 py-3 text-sm font-medium transition-colors ${
+                  className={`flex-1 px-4 py-3 text-sm font-semibold transition-colors ${
                     pathname === tab.path ||
                     (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
                       ? "bg-red-500 text-white"
@@ -268,9 +267,9 @@ export default function Navbar() {
               {tab.dropdown && openDropdown === tab.name && (
                 <div className="bg-gray-50 border-t">
                   {tab.dropdown.map((item) => (
-                    <MobileDropdownItem 
-                      key={item.name} 
-                      item={item} 
+                    <MobileDropdownItem
+                      key={item.name}
+                      item={item}
                       pathname={pathname}
                       onClose={() => setIsMobileMenuOpen(false)}
                     />
@@ -285,7 +284,7 @@ export default function Navbar() {
   );
 }
 
-// Recursive Mobile Dropdown for nested items
+// Recursive Mobile Dropdown
 const MobileDropdownItem = ({
   item,
   pathname,
@@ -308,9 +307,7 @@ const MobileDropdownItem = ({
             pathname === item.path ? "bg-red-50 text-red-600 font-medium" : ""
           }`}
           onClick={() => {
-            if (!item.dropdown) {
-              onClose();
-            }
+            if (!item.dropdown) onClose();
           }}
         >
           {item.name}
@@ -337,10 +334,10 @@ const MobileDropdownItem = ({
       {item.dropdown && open && (
         <div className="bg-gray-50">
           {item.dropdown.map((sub) => (
-            <MobileDropdownItem 
-              key={sub.name} 
-              item={sub} 
-              pathname={pathname} 
+            <MobileDropdownItem
+              key={sub.name}
+              item={sub}
+              pathname={pathname}
               level={level + 1}
               onClose={onClose}
             />

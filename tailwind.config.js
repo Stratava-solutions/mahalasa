@@ -10,7 +10,8 @@ module.exports = {
     extend: {
       colors: {
         primary: "#006633",
-        orange_bg:"#FFCC99"
+        orange_bg:"#FFCC99",
+        bgDefault:"#eee9c0"
       },
       fontFamily: {
         sans: ["Georgia", "Times New Roman", "Times", "serif"], 
