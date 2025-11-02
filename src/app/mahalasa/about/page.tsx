@@ -1,12 +1,7 @@
 import Image from "next/image";
 
 /**
- * come on now once again
- * come on now once again
- * come on now once again
- *  come on now once again
- * come on now once again come on now once again
- * come on now once again
+ * removed env
  */
 
 export default function AboutPage() {
