@@ -62,8 +62,7 @@ body {
   max-width: 1523px;
   min-width: 320px; /* Changed from 800px */
   margin: 0 auto;
-    color: #006633;
-
+  color: #006633;
 }
 
 /* Responsive adjustments for content wrapper */
@@ -116,7 +115,7 @@ body {
     gap: 15px;
     /* padding: 15px; */
   }
-  
+
   .left-sidebar,
   .right-sidebar {
     flex: 0 0 240px;
@@ -130,10 +129,10 @@ body {
     flex-direction: column;
     /* padding: 10px; */
     gap: 20px;
-     display: flex;
+    display: flex;
     align-items: center;
   }
-  
+
   .left-sidebar,
   .right-sidebar,
   .center-content {
@@ -141,16 +140,16 @@ body {
     width: 100%;
     max-width: 100%;
   }
-  
+
   /* Order: Left sidebar, Center content, Right sidebar */
   .left-sidebar {
     order: 1;
   }
-  
+
   .center-content {
     order: 2;
   }
-  
+
   .right-sidebar {
     order: 3;
   }
@@ -164,8 +163,26 @@ body {
     display: flex;
     align-items: center;
   }
-  
+
   .center-content {
     padding: 15px;
   }
+}
+
+/**
+Harikandige
+**/
+
+.main-layout {
+  width: 100vw;
+  height: 100vh;
+  background: transparent;
+    max-width: 1150px;
+
+}
+
+.main-content-wrapper {
+  max-width: 1150px;
+  width: 100%;
+  background-color: #ffe0ff;
 }

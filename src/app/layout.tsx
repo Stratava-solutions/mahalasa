@@ -1,9 +1,4 @@
-// app/layout.tsx or pages/_app.tsx
-import "../styles/globals.css";
-import Navbar from "@/components/Navbar";
-import Footer from "@/components/Footer";
-import LeftSidebar from "@/components/LeftSidebar";
-import RightSidebar from "@/components/RightSidebar";
+import "@/styles/globals.css"
 
 import { Playfair_Display } from "next/font/google";
 import type { Metadata } from "next";
@@ -29,17 +24,9 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable}`}>
       <body className="font-sans bg-whe text-gray-900">
-        <div className="content-wrapper">
-          <div className="header-image"></div>
-
-          <Navbar />
-          <main className="main-content">
-            <LeftSidebar />
+          <main>
             {children}
-            <RightSidebar />
           </main>
-          <Footer />
-        </div>
       </body>
     </html>
   );

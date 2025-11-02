@@ -10,73 +10,14 @@ interface Tab {
   dropdown?: Tab[];
 }
 
-const tabs: Tab[] = [
-  { name: "HOME", path: "/" },
-  { name: "CHRONICLES", path: "/chronicles" },
-  { name: "FACTFILE", path: "/factfile" },
-  { name: "CHARITRA", path: "/charitra" },
-  { name: "SHRI GURU CHARITRA", path: "/shri-guru-charitra" },
-  { name: "PANCHANGAM", path: "/panchangam" },
-  { name: "INVITATION", path: "/invitation" },
-  { name: "SEVA", path: "/seva" },
-  {
-    name: "TEMPLES",
-    path: "/temples",
-    dropdown: [
-      {
-        name: "Goa",
-        path: "#",
-        dropdown: [
-          { name: "MARDOL", path: "https://web.archive.org/web/20241009065525/http://mardol.mahalasa.org/" },
-          { name: "VERNA", path: "https://web.archive.org/web/20241009065525/http://verna.mahalasa.org/" },
-        ],
-      },
-      {
-        name: "Karnataka",
-        path: "#",
-        dropdown: [
-          { name: "BASRUR", path: "https://web.archive.org/web/20241009065525/http://basrur.mahalasa.org/" },
-          { name: "HARIKHANDIGE", path: "https://web.archive.org/web/20241009065525/http://harikhandige.mahalasa.org/" },
-          { name: "KONCHADY", path: "https://web.archive.org/web/20241009065525/http://konchady.mahalasa.org/" },
-          { name: "KUMTA", path: "https://web.archive.org/web/20241009065525/http://kumta.mahalasa.org/" },
-          { name: "MADANGERI", path: "https://web.archive.org/web/20241009065525/http://madangeri.mahalasa.org/" },
-          { name: "MOODBIDRI", path: "https://web.archive.org/web/20241009065525/http://moodbidri.mahalasa.org/" },
-          { name: "MUDGERI", path: "https://web.archive.org/web/20241009065525/http://www.shrimahalasanarayani.org/" },
-          { name: "SHIRVA", path: "https://web.archive.org/web/20241009065525/http://shirva.mahalasa.org/" },
-        ],
-      },
-      {
-        name: "Maharashtra",
-        path: "#",
-        dropdown: [
-          { name: "NIVASE", path: "https://web.archive.org/web/20241009065525/https://www.mahalasa.org/temples/maharashtra/nevase/" },
-          { name: "OTHER", path: "#" },
-        ],
-      },
-    ],
-  },
-  {
-    name: "CHANNELS",
-    path: "/channels",
-    dropdown: [
-      { name: "Mahalasa At Temples", path: "/channels/mahalasa-devi" },
-      { name: "Temples", path: "/channels/temples" },
-      { name: "Video Gallery", path: "/channels/video-gallery" },
-    ],
-  },
-  { name: "ABOUT", path: "/about" },
-  {
-    name: "CONNECT",
-    path: "/contact",
-    dropdown: [
-      { name: "Contact Us", path: "/contact" },
-      { name: "Temples Contacts", path: "/contact/temples-contact" },
-      { name: "Policies", path: "/contact/policies" },
-    ],
-  },
-];
 
-export default function Navbar() {
+interface NavbarI{
+  tabs:Tab[]
+}
+
+
+
+export default function Navbar({tabs}:NavbarI) {
   const pathname = usePathname();
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [nestedDropdown, setNestedDropdown] = useState<string | null>(null);
@@ -196,13 +137,13 @@ export default function Navbar() {
           {tabs.map((tab) => (
             <li
               key={tab.name}
-              className="relative dropdown-container"
+              className="relative  whitespace-nowrap dropdown-container"
               onMouseEnter={() => tab.dropdown && handleMouseEnter(tab.name)}
               onMouseLeave={handleMouseLeave}
             >
               <Link
                 href={tab.path}
-                className={`px-4 py-2 rounded-md text-sm font-semibold tracking-wide transition-all duration-200 ${
+                className={`px-4 py-2 whitespace-nowrap rounded-md text-sm font-semibold tracking-wide transition-all duration-200 ${
                   pathname === tab.path ||
                   (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
                     ? "bg-red-500 text-white shadow-md"

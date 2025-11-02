@@ -22,84 +22,84 @@ export default function Footer() {
         <nav className="mb-8">
           <div className="flex flex-wrap justify-center items-center gap-4 md:gap-6 text-sm">
             <Link 
-              href="/" 
+              href="/mahalasa" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               HOME
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/chronicles" 
+              href="/mahalasa/chronicles" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               CHRONICLES
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/factfile" 
+              href="/mahalasa/factfile" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               FACTFILE
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/charitra" 
+              href="/mahalasa/charitra" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               CHARITRA
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/panchang" 
+              href="/mahalasa/panchangam" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               PANCHANG
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/invitation" 
+              href="/mahalasa/invitation" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               INVITATION
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/seva" 
+              href="/mahalasa/seva" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               SEVA
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/temples" 
+              href="/mahalasa/temples" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               TEMPLES
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/channels" 
+              href="/mahalasa/channels" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               CHANNELS
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/about" 
+              href="/mahalasa/about" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               ABOUT
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/connect" 
+              href="/mahalasa/contact" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               CONNECT
             </Link>
             <span className="text-green-400">|</span>
             <Link 
-              href="/guru-charitra" 
+              href="/mahalasa/shri-guru-charitra" 
               className="hover:text-yellow-300 transition-colors font-medium"
             >
               Shri Guru Charitra
@@ -136,7 +136,7 @@ export default function Footer() {
         {/* Social Media */}
         <div className="flex justify-center mt-6">
           <Link 
-            href="https://facebook.com" 
+            href="https://www.facebook.com/MyMahalasa/" 
             target="_blank"
             className="text-blue-400 hover:text-blue-300 transition-colors text-2xl"
           >
