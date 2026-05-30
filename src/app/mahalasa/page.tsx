@@ -3,11 +3,10 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="bg-[#eee9c0] text-primary min-h-screen">
+    <div className="text-primary">
       <HeroSection />
 
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-6xl">
+      <div className="py-4">
         {/* Title */}
         <div className="text-center mb-6">
           <h2 className="text-2xl font-bold text-primary mb-4">

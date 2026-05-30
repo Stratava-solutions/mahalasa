@@ -108,7 +108,9 @@ export default function Layout({
           <Navbar tabs={tabs} />
           <main className="main-content">
             <LeftSidebar />
-            {children}
+            <div className="flex-1 min-w-0 py-4 px-3">
+              {children}
+            </div>
             <RightSidebar />
           </main>
           <Footer />

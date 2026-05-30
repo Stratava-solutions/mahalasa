@@ -169,6 +169,14 @@ body {
   }
 }
 
+/* Admin panel — reset body centering so it goes full screen */
+body:has([data-admin]) {
+  display: block;
+  background: #f9fafb;
+  background-image: none;
+  font-family: Inter, sans-serif;
+}
+
 /**
 Harikandige
 **/

@@ -1,29 +1,44 @@
 "use client";
 
-import Image from "next/image";
+import { useEffect, useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/navigation";
+import { GallerySkeleton } from "@/components/PageSkeleton";
 
-export default function Temples() {
-  const photos = [
-    { src: "/temples/temple1.jpg", caption: "Verna Temples" },
-    { src: "/temples/temple2.jpg", caption: "Mardol Temple" },
-    { src: "/temples/temple3.jpg", caption: "Madangeri Temple" },
-    { src: "/temples/temple4.jpg", caption: "Kumta Temple" },
-    { src: "/temples/temple5.jpg", caption: "Konchady Temple" },
-    { src: "/temples/temple6.jpg", caption: "Shirwa Temple" },
-    { src: "/temples/temple7.jpg", caption: "Basrur Temple" },
-    { src: "/temples/temple8.jpg", caption: "Shirwa Temple" },
-  ];
+interface Photo { _id: string; imageUrl: string; alt: string; title: string; }
+
+const FALLBACK: Photo[] = [
+  { _id: "1", imageUrl: "/temples/temple1.jpg", alt: "Verna Temple", title: "Verna Temple" },
+  { _id: "2", imageUrl: "/temples/temple2.jpg", alt: "Mardol Temple", title: "Mardol Temple" },
+  { _id: "3", imageUrl: "/temples/temple3.jpg", alt: "Madangeri Temple", title: "Madangeri Temple" },
+  { _id: "4", imageUrl: "/temples/temple4.jpg", alt: "Kumta Temple", title: "Kumta Temple" },
+  { _id: "5", imageUrl: "/temples/temple5.jpg", alt: "Konchady Temple", title: "Konchady Temple" },
+  { _id: "6", imageUrl: "/temples/temple6.jpg", alt: "Shirwa Temple", title: "Shirwa Temple" },
+  { _id: "7", imageUrl: "/temples/temple7.jpg", alt: "Basrur Temple", title: "Basrur Temple" },
+  { _id: "8", imageUrl: "/temples/temple8.jpg", alt: "Shirwa Temple", title: "Shirwa Temple" },
+];
+
+export default function TemplesChannel() {
+  const [photos, setPhotos] = useState<Photo[]>([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    fetch("/api/public/gallery?category=channel-temples")
+      .then((r) => r.json())
+      .then((data) => { setPhotos(Array.isArray(data) && data.length > 0 ? data : FALLBACK); })
+      .catch(() => { setPhotos(FALLBACK); })
+      .finally(() => setLoaded(true));
+  }, []);
+
+  if (!loaded) return <GallerySkeleton />;
 
   return (
     <div className="relative text-center mb-6 w-full max-w-4xl mx-auto">
       <h2 className="text-2xl font-bold text-green-700 my-4">
-        Shri Mahalasa Narayani at various temples
+        Shri Mahalasa Narayani Temples
       </h2>
-
       <Swiper
         modules={[Autoplay, Navigation]}
         slidesPerView={1}
@@ -32,19 +47,13 @@ export default function Temples() {
         loop
         className="w-full h-[500px]"
       >
-        {photos.map((photo, idx) => (
-          <SwiperSlide key={idx} className="flex flex-col items-center justify-center">
+        {photos.map((photo) => (
+          <SwiperSlide key={photo._id} className="flex flex-col items-center justify-center">
             <div className="relative w-full h-[450px] flex justify-center">
-              <Image
-                src={photo.src}
-                alt={photo.caption}
-                className="object-contain rounded-lg"
-                priority={idx === 0}
-                width={500}
-                height={500}
-              />
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src={photo.imageUrl} alt={photo.alt || photo.title} className="object-contain rounded-lg h-full" />
             </div>
-            <p className="text-sm text-gray-600 mt-2 italic">{photo.caption}</p>
+            <p className="text-sm text-gray-600 mt-2 italic">{photo.title}</p>
           </SwiperSlide>
         ))}
       </Swiper>

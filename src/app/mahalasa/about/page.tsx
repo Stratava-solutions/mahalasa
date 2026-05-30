@@ -6,8 +6,8 @@ import Image from "next/image";
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen text-primary bg-orange-50 py-6 md:py-8">
-      <div className="container mx-auto px-4">
+    <div className="text-primary">
+      <div>
         <div>
           <h1 className="text-2xl md:text-3xl font-bold text-red-600 mb-4 md:mb-6 text-center">
             Experience of a Seeker

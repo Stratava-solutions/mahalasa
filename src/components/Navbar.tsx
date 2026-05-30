@@ -22,51 +22,28 @@ export default function Navbar({tabs}:NavbarI) {
   const [openDropdown, setOpenDropdown] = useState<string | null>(null);
   const [nestedDropdown, setNestedDropdown] = useState<string | null>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
-  const nestedTimeoutRef = useRef<NodeJS.Timeout | null>(null);
 
-  // Close dropdown when clicking outside
+  const navRef = useRef<HTMLElement>(null);
+
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (!target.closest(".dropdown-container")) {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
         setOpenDropdown(null);
         setNestedDropdown(null);
+        setIsMobileMenuOpen(false);
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
     return () => document.removeEventListener("mousedown", handleClickOutside);
   }, []);
 
-  const handleMouseEnter = (name: string) => {
-    if (window.innerWidth >= 768) {
-      if (timeoutRef.current) clearTimeout(timeoutRef.current);
-      setOpenDropdown(name);
-    }
+  const handleTabClick = (name: string) => {
+    setOpenDropdown(openDropdown === name ? null : name);
+    setNestedDropdown(null);
   };
 
-  const handleMouseLeave = () => {
-    if (window.innerWidth >= 768) {
-      timeoutRef.current = setTimeout(() => {
-        setOpenDropdown(null);
-        setNestedDropdown(null);
-      }, 200);
-    }
-  };
-
-  const handleNestedMouseEnter = (name: string) => {
-    if (window.innerWidth >= 768) {
-      if (nestedTimeoutRef.current) clearTimeout(nestedTimeoutRef.current);
-      setNestedDropdown(name);
-    }
-  };
-
-  const handleNestedMouseLeave = () => {
-    if (window.innerWidth >= 768) {
-      nestedTimeoutRef.current = setTimeout(() => {
-        setNestedDropdown(null);
-      }, 200);
-    }
+  const handleNestedClick = (name: string) => {
+    setNestedDropdown(nestedDropdown === name ? null : name);
   };
 
   const toggleMobileDropdown = (name: string) => {
@@ -79,31 +56,34 @@ export default function Navbar({tabs}:NavbarI) {
       className={`absolute bg-white border border-gray-200 rounded-lg shadow-xl min-w-[190px] z-50 dropdown-container backdrop-blur-sm transition-all duration-200 ${
         isNested ? "top-0 left-full ml-2" : "top-full left-0 mt-2"
       }`}
-      onMouseEnter={() => {
-        if (timeoutRef.current) clearTimeout(timeoutRef.current);
-        if (nestedTimeoutRef.current) clearTimeout(nestedTimeoutRef.current);
-      }}
-      onMouseLeave={isNested ? handleNestedMouseLeave : handleMouseLeave}
     >
       {items.map((item) => (
-        <li
-          key={item.name}
-          className="relative group"
-          onMouseEnter={() => item.dropdown && handleNestedMouseEnter(item.name)}
-        >
-          <Link
-            href={item.path}
-            target={item.path.startsWith("http") ? "_blank" : "_self"}
-            className={`block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-orange-100 hover:text-red-600 transition-all duration-150 rounded-md ${
-              pathname === item.path ? "bg-red-100 text-red-600" : ""
-            }`}
-            onClick={() => {
-              setOpenDropdown(null);
-              setNestedDropdown(null);
-            }}
-          >
-            {item.name} {item.dropdown && <span className="ml-1">▸</span>}
-          </Link>
+        <li key={item.name} className="relative group">
+          <div className="flex items-center">
+            <Link
+              href={item.path}
+              target={item.path.startsWith("http") ? "_blank" : "_self"}
+              className={`flex-1 block px-4 py-2 text-sm font-medium text-gray-700 hover:bg-orange-100 hover:text-red-600 transition-all duration-150 rounded-md ${
+                pathname === item.path ? "bg-red-100 text-red-600" : ""
+              }`}
+              onClick={() => {
+                if (!item.dropdown) {
+                  setOpenDropdown(null);
+                  setNestedDropdown(null);
+                }
+              }}
+            >
+              {item.name}
+            </Link>
+            {item.dropdown && (
+              <button
+                onClick={() => handleNestedClick(item.name)}
+                className="px-2 py-2 text-gray-500 hover:text-red-600"
+              >
+                ▸
+              </button>
+            )}
+          </div>
           {item.dropdown && nestedDropdown === item.name && (
             <Dropdown items={item.dropdown} isNested={true} />
           )}
@@ -113,7 +93,7 @@ export default function Navbar({tabs}:NavbarI) {
   );
 
   return (
-    <nav className="bg-gradient-to-r from-orange-50 to-red-50 border-b border-orange-200 shadow-sm w-full relative z-50">
+    <nav ref={navRef} className="bg-gradient-to-r from-orange-50 to-red-50 border-b border-orange-200 shadow-sm w-full relative z-50">
       {/* Mobile Header */}
       <div className="md:hidden flex justify-between items-center px-4 py-3">
         <span className="font-extrabold text-red-700 text-lg">Mahalasa</span>
@@ -137,21 +117,35 @@ export default function Navbar({tabs}:NavbarI) {
           {tabs.map((tab) => (
             <li
               key={tab.name}
-              className="relative  whitespace-nowrap dropdown-container"
-              onMouseEnter={() => tab.dropdown && handleMouseEnter(tab.name)}
-              onMouseLeave={handleMouseLeave}
+              className="relative whitespace-nowrap dropdown-container"
             >
-              <Link
-                href={tab.path}
-                className={`px-4 py-2 whitespace-nowrap rounded-md text-sm font-semibold tracking-wide transition-all duration-200 ${
-                  pathname === tab.path ||
-                  (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
-                    ? "bg-red-500 text-white shadow-md"
-                    : "text-gray-700 hover:bg-orange-100 hover:text-red-700"
-                }`}
-              >
-                {tab.name} {tab.dropdown && <span className="ml-1 inline-block">▾</span>}
-              </Link>
+              <div className="flex items-center">
+                <Link
+                  href={tab.path}
+                  className={`px-4 py-2 whitespace-nowrap rounded-md text-sm font-semibold tracking-wide transition-all duration-200 ${
+                    pathname === tab.path ||
+                    (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
+                      ? "bg-red-500 text-white shadow-md"
+                      : "text-gray-700 hover:bg-orange-100 hover:text-red-700"
+                  }`}
+                  onClick={() => tab.dropdown && handleTabClick(tab.name)}
+                >
+                  {tab.name}
+                </Link>
+                {tab.dropdown && (
+                  <button
+                    onClick={() => handleTabClick(tab.name)}
+                    className={`px-1 py-2 text-sm transition-colors ${
+                      pathname === tab.path ||
+                      (tab.dropdown && tab.dropdown.some((i) => pathname === i.path))
+                        ? "text-white"
+                        : "text-gray-500 hover:text-red-700"
+                    }`}
+                  >
+                    ▾
+                  </button>
+                )}
+              </div>
 
               {tab.dropdown && openDropdown === tab.name && <Dropdown items={tab.dropdown} />}
             </li>

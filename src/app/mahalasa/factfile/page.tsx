@@ -3,11 +3,9 @@ import Image from "next/image";
 export default function Factfile() {
   return (
     <div
-      className="min-h-screen text-primary"
-
+      className="text-primary"
     >
-      {/* Main Content */}
-      <div className="container mx-auto px-4 py-6 max-w-6xl text-primary">
+      <div>
         {/* Title */}
         <div className="text-center text-primary mb-6">
           <h1 className="text-2xl font-bold mb-4 text-primary">
